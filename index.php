@@ -14,6 +14,7 @@
   </head>
 
   <body>
+    <!-- Header container -->
     <div class="header-container">
       <div class="top">
         <ul>
@@ -36,6 +37,34 @@
         <a href="#" class="btn main">بوابة التسجيل</a>
       </div>
     </div>
+    <!-- END Header container -->
+
+    <!-- Introduction container -->
+    <div class="introduction-container">
+      <div class="side">
+        <div class="intro">
+          <div class="social">
+            <a href="#"> <img src="assets/svg/snapchat.svg" /> </a>
+            <a href="#"> <img src="assets/svg/instagram.svg" /> </a>
+            <a href="#"> <img src="assets/svg/twitter.svg" /> </a>
+            <a href="#"> <img src="assets/svg/whatsapp.svg" /> </a>
+          </div>
+          <p>
+            منذ 1404 هـ 1984 م ومدارس الشمس تساهم في بناء أجيال داعمة في نهضة الوطن
+            تُعتبر مدارس الشمس الأهلية من أعرق المدارس في مدينة الرياض حيثُ تأسست عام 1404 هـ مواكبةً للتطور العلمي الذي يسمو بأهدافه التربوية ليصنع أجيالاً سلاحها العلم لمواجهة المُستقبل بعقل نافذ وبصيرةٍ ثاقبة. تميزت المدارس في تقديم تعليم ذو جودة عالية باستخدام أحدث وسائل وتقنيات التعليم المنبعثة من رسالتها في بناء مجتمع معرفي يعتز بقيمه وماضية ، مشغوف بتعلم مهارات وعلوم العصر ، وداعما في رقي وتقدم المجتمع
+          </p>
+        </div>
+      </div>
+      <div class="side flex">
+        <div class="item" style="background-image:url('assets/img/black_class.png')">
+          <p>تسعى المدارس لتطوير نظام الجودة الشامل للحفاظ على مخرجات الخدمات التعليمية المتميزة</p>
+        </div>
+        <div class="item" style="background-image:url('assets/img/graduate.png')">
+          <p>الإستثمار الفعال والمستمر في تطوير بيئة تعليمية مثالية وتطبيق تقنيات التعليم الحديثة</p>
+        </div>
+      </div>
+    </div>
+    <!-- END Introduction container -->
   </body>
 
   <footer>
