@@ -1,0 +1,121 @@
+$cairo: 'Cairo', sans-serif
+
+a
+  text-decoration: none
+
+ul
+  margin: 0px
+  padding: 0px
+  list-style: none
+
+p,h2,h1
+  margin: 0px
+
+body, html
+  padding: 0px
+  margin: 0px
+
+*
+  box-sizing: border-box
+  outline: 0
+
+.header-container
+  background-color: #040404
+  background-image: url("../img/slide_school.jpg")
+  background-size: cover
+  background-position: center
+  min-height: 700px
+  position: relative
+  *
+    position: relative
+    z-index: 2
+  &::before
+    content: ""
+    position: absolute
+    bottom: 0px
+    left: 0px
+    width: 100%
+    height: 100%
+    background: linear-gradient(rgba(0, 0, 0, 0.5) 70%, #080808, #000)
+    z-index: 1
+  &::after
+    content: ""
+    position: absolute
+    bottom: -85px
+    height: 86px
+    left: 0px
+    width: 100%
+    background: url("../svg/header_vector_big.svg")
+    background-size: cover
+    background-position: bottom
+    z-index: 0
+  .content
+    padding-top: 100px
+    .logo
+      margin: 0px auto
+      display: block
+      margin-bottom: 50px
+    h1
+      color: #FFF
+      text-align: center
+      font-family: $cairo
+      font-size: 30px
+      font-weight: 700
+    .btn.main
+      display: block
+      margin: 40px auto
+      max-width: 200px
+      line-height: 55px
+      text-align: center
+      background: #1DA1F2
+      border-radius: 30px
+      color: #FFF
+      font-family: $cairo
+      font-size: 20px
+  .top
+    background: #FFFFFF
+    line-height: 70px
+    position: relative
+    display: flex
+    font-family: $cairo
+    padding: 0px 20px
+    margin-bottom: 80px
+    &::after
+      content: ""
+      position: absolute
+      bottom: -32px
+      left: 0px
+      width: 100%
+      height: 33px
+      background: url("../svg/header_vector.svg")
+      background-size: cover
+      background-position: bottom
+    &::before
+      content: ""
+      position: absolute
+      bottom: -50px
+      left: 0px
+      width: 100%
+      height: 53px
+      background: url("../svg/header_vector_transparent.svg")
+      background-size: cover
+      background-position: bottom
+    ul
+      flex-shrink: 0
+      li
+        display: inline-block
+        margin-left: 20px
+        a
+          display: inline-block
+          color: #333333
+          font-size: 16px
+          img
+            vertical-align: middle
+    .number
+      width: 100%
+      color: #333333
+      font-size: 16px
+      text-align: left
+      img
+        vertical-align: middle
+        margin-right: 5px
