@@ -65,6 +65,44 @@
       </div>
     </div>
     <!-- END Introduction container -->
+
+    <!-- articles container -->
+    <div class="article-container">
+      <div class="articles-wrapper">
+        <h5>مقالات</h5>
+        <div class="wrapper">
+          <?php for ($i=0; $i < 6; $i++) { ?>
+            <div class="item"></div>
+          <?php } ?>
+        </div>
+      </div>
+      <div class="text">
+        <h1>رؤيتنا</h1>
+        <p>
+        مساهمة في بناء مجتمع معرفي يعتز
+        بقيمه وماضية ، مشغوف بتعلم مهارات
+        وعلوم العصر ، وداعما في رقي وتقدم
+        المجتمع
+        </p>
+      </div>
+    </div>
+    <!-- END articles container -->
+
+    <!-- Signup container -->
+    <div class="signup-container">
+      <div class="side register">
+        <h1>بوابة التسجيل</h1>
+        <p>سواء كنت طالب أو من أولياء التلاميد , أصبح الآن بإمكانك التسجيل عن طريق موقعنا الإلكتروني و بسهولة تامة </p>
+        <form class="" action="" method="post">
+          <input type="text" name="" value="" placeholder="السجل المدني" />
+          <input type="submit" name="" value="التسجيل" />
+        </form>
+      </div>
+      <div class="side whatsapp">
+        <h5>إدا كانت لديكم أي إستفسارات لا تردد في التواصل معنا</h5>
+      </div>
+    </div>
+    <!-- END Signup container -->
   </body>
 
   <footer>
