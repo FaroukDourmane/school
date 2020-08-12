@@ -255,6 +255,18 @@ body, html
     padding: 50px
     &.whatsapp
       background: #F9F9F9
+      position: relative
+      padding-bottom: 270px
+      &::after
+        content: ""
+        position: absolute
+        bottom: 0px
+        left: 0px
+        width: 100%
+        height: 260px
+        background: url("../svg/whatsapp_vector.svg")
+        background-size: cover
+        background-position: top
       h5
         color: #333333
         font-size: 20px
@@ -271,6 +283,34 @@ body, html
           height: 1px
           background: #333
           opacity: 0.2
+      ul
+        max-width: 400px
+        margin: 0px auto
+        li
+          display: block
+          color: #707070
+          text-align: right
+          b
+            color: #333333
+      .btn-green
+        line-height: 60px
+        display: block
+        max-width: 300px
+        margin: 50px auto
+        color: #FFF
+        text-align: center
+        background: rgba(#25D366,0.8)
+        border-radius: 5px
+        position: relative
+        font-weight: 600
+        &:hover
+          background: #25D366
+        img
+          vertical-align: middle
+          position: absolute
+          top: 50%
+          left: 20px
+          transform: translateY(-50%)
     &.register
       background-color: #222
       background-image: url("../img/slide_school.jpg")
@@ -316,3 +356,76 @@ body, html
             color: #FFF
             font-size: 20px
             cursor: pointer
+
+.footer-container
+  background: #040404
+  position: relative
+  font-family: $cairo
+  &::before
+    content: ""
+    position: absolute
+    left: 0px
+    top: -85px
+    height: 86px
+    width: 100%
+    background: url("../svg/footer_vector.svg")
+    background-size: cover
+    background-position: top
+  .wrapper
+    display: flex
+    justify-content: center
+    padding-bottom: 50px
+    .item
+      margin: 0px 20px
+      .maps-btn
+        color: #FFF
+        border: 1px #FFF solid
+        border-radius: 5px
+        display: inline-block
+        line-height: 50px
+        padding: 0px 20px
+        img
+          vertical-align: middle
+          margin-left: 10px
+      iframe
+        border-radius: 10px
+      ul
+        li
+          a
+            color: #FFF
+            img
+              vertical-align: middle
+              margin-left: 5px
+      h5
+        color: #FFF
+        font-weight: 600
+        font-size: 20px
+        margin-bottom: 20px
+      label
+        display: block
+        margin-bottom: 10px
+        span
+          color: #DDDDDD
+          font-size: 15px
+          display: block
+        b
+          font-size: 20px
+          color: #FFF
+          font-weight: 400
+  .copyrights
+    display: flex
+    background: #FFFFFF
+    line-height: 70px
+    padding: 0px 20px
+    p
+      flex-shrink: 0
+      color: #777
+      font-size: 13px
+    ul
+      width: 100%
+      li
+        display: inline-block
+        margin-left: 10px
+        a
+          color: #333
+          font-size: 15px
