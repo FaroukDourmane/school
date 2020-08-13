@@ -514,6 +514,9 @@ body, html {
           margin-left: 10px; }
       .footer-container .wrapper .item iframe {
         border-radius: 10px; }
+        @media screen and (max-width: 340px) {
+          .footer-container .wrapper .item iframe {
+            width: 100%; } }
       .footer-container .wrapper .item ul li a {
         color: #FFF; }
         .footer-container .wrapper .item ul li a img {
