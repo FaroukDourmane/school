@@ -14,11 +14,23 @@
   </head>
 
   <body>
+    <!-- Fixed menu -->
+    <div class="fixed-menu">
+      <ul>
+        <li class="close"> <a href="#" class="menuToggler"> <img src="assets/svg/menu_toggle.svg" /> إغلاق </a> </li>
+        <li> <a href="#">الرئيسية</a> </li>
+        <li> <a href="#">إتصل بنا</a> </li>
+        <li> <a href="#">من نحن</a> </li>
+        <li> <a href="#">بوابة التسجيل</a> </li>
+      </ul>
+    </div>
+    <!-- END Fixed menu -->
+
     <!-- Header container -->
     <div class="header-container">
       <div class="top">
         <ul>
-          <li> <a href="#"> <img src="assets/svg/menu_toggle.svg" /> </a> </li>
+          <li class="small"> <a href="#" class="menuToggler"> <img src="assets/svg/menu_toggle.svg" /> </a> </li>
           <li> <a href="#">الرئيسية</a> </li>
           <li> <a href="#">إتصل بنا</a> </li>
           <li> <a href="#">من نحن</a> </li>
@@ -72,7 +84,11 @@
         <h5>مقالات</h5>
         <div class="wrapper">
           <?php for ($i=0; $i < 6; $i++) { ?>
-            <div class="item"></div>
+            <div class="item" style="background-image:url('assets/img/graduate.png');">
+              <p>زيارة إلى متحف صقر الجزيرة للطيران</p>
+              <a href="#"></a>
+              <span>قراءة</span>
+            </div>
           <?php } ?>
         </div>
       </div>
