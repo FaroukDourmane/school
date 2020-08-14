@@ -151,24 +151,8 @@
     "no_admins" => "There are no admins",
     "account_not_found" => "Account not found",
 
-    "control_articles" => " Control articles (add,edit) ",
-    "see_customer_profiles" => "See customer profiles",
-    "control_video" => "Add & remove videos",
-    "control_photos" => "Add & remove photos",
-    "see_requests" => "See requests",
-    "edit_requests" => "Edit requests",
-    "remove_requests" => "Remove requests",
-
     "category_not_found" => "Category not found",
     "email_required" => "The email cannot be empty",
-
-    "companies" => "Companies",
-    "latest_registered_companies" => "Latest registered companies",
-    "all_companies" => "All companies",
-    "product_name" => "Product name",
-    "registration_date" => "Registration date",
-    "added_date" => "Added date",
-    "total" => "Total",
 
     "active_companies" => "Active companies",
     "hidden_companies" => "Hidden companies",
@@ -195,15 +179,7 @@
     "english" => "English",
     "french" => "French",
 
-    "all_products" => "All products",
-    "active_products" => "Active products",
-    "hidden_products" => "Hidden products",
-
-    "add_product" => "Add product",
-
-    "active_articles" => "Active articles",
-    "hidden_articles" => "Hidden articles",
-
-    "all_categories" => "All categories",
+    "registered" => "Registered",
+    "total" => "Total",
   ];
 ?>

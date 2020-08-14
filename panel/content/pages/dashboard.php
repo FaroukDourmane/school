@@ -22,9 +22,12 @@ if ( !admin_logged() )
 // #################################################
 // #################################################
 
-$products_q = $Q->query("SELECT * FROM `products` ORDER BY `id` ");
-$active_products = $Q->query("SELECT * FROM `products` WHERE `status`='1' ");
-$hidden_products = $Q->query("SELECT * FROM `products` WHERE `status`='0' ");
+$registered_q = $Q->query("SELECT * FROM `users` ORDER BY `id` ");
+$kids_registered_q = $Q->query("SELECT * FROM `users` WHERE `stage`='0' ");
+$primary_registered_q = $Q->query("SELECT * FROM `users` WHERE `stage`='1' ");
+$moyen_registered_q = $Q->query("SELECT * FROM `users` WHERE `stage`='2' ");
+$highschool_registered_q = $Q->query("SELECT * FROM `users` WHERE `stage`='3' ");
+
 
 $articles_q = $Q->query("SELECT * FROM `articles` ORDER BY `id` ");
 $active_articles = $Q->query("SELECT * FROM `articles` WHERE `status`='1' ");
@@ -33,15 +36,7 @@ $hidden_articles = $Q->query("SELECT * FROM `articles` WHERE `status`='0' ");
     <!-- Product's statistics -->
         <div class="row page-title-header">
           <div class="col-12">
-            <h1 style="text-align: <?php __('align'); ?>"> <?php __("products"); ?> </h1>
-          </div>
-
-          <div class="col-md-12">
-            <div class="page-header-toolbar">
-              <div class="sort-wrapper">
-                <button type="button" class="btn btn-primary toolbar-item"><?php __("add_product"); ?></button>
-              </div>
-            </div>
+            <h1 style="text-align: <?php __('align'); ?>"> <?php __("registered"); ?> </h1>
           </div>
         </div>
         <!-- Page Title Header Ends-->
@@ -53,7 +48,7 @@ $hidden_articles = $Q->query("SELECT * FROM `articles` WHERE `status`='0' ");
                   <div class="col">
                     <div class="d-flex">
                       <div class="wrapper">
-                        <h3 class="mb-0 font-weight-semibold"><?php echo $products_q->num_rows; ?></h3>
+                        <h3 class="mb-0 font-weight-semibold"><?php echo $registered_q->num_rows; ?></h3>
                         <h5 class="mb-0 font-weight-medium text-primary"><?php __("total"); ?></h5>
                       </div>
                     </div>
@@ -68,19 +63,35 @@ $hidden_articles = $Q->query("SELECT * FROM `articles` WHERE `status`='0' ");
             <div class="card">
               <div class="card-body">
                 <div class="row">
-                  <div class="col-lg-4 col-md-6">
+                  <div class="col-lg-3 col-md-6">
                     <div class="d-flex">
                       <div class="wrapper">
-                        <h3 class="mb-0 font-weight-semibold"><?php echo $active_products->num_rows; ?></h3>
-                        <h5 class="mb-0 font-weight-medium text-primary"><?php __("active_companies"); ?></h5>
+                        <h3 class="mb-0 font-weight-semibold"><?php echo $kids_registered_q->num_rows; ?></h3>
+                        <h5 class="mb-0 font-weight-medium text-primary">روضة</h5>
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+                  <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
                     <div class="d-flex">
                       <div class="wrapper">
-                        <h3 class="mb-0 font-weight-semibold"><?php echo $hidden_products->num_rows; ?></h3>
-                        <h5 class="mb-0 font-weight-medium text-primary"><?php __("hidden_companies"); ?></h5>
+                        <h3 class="mb-0 font-weight-semibold"><?php echo $primary_registered_q->num_rows; ?></h3>
+                        <h5 class="mb-0 font-weight-medium text-primary">ابتدائي</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
+                    <div class="d-flex">
+                      <div class="wrapper">
+                        <h3 class="mb-0 font-weight-semibold"><?php echo $moyen_registered_q->num_rows; ?></h3>
+                        <h5 class="mb-0 font-weight-medium text-primary">متوسط</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
+                    <div class="d-flex">
+                      <div class="wrapper">
+                        <h3 class="mb-0 font-weight-semibold"><?php echo $highschool_registered_q->num_rows; ?></h3>
+                        <h5 class="mb-0 font-weight-medium text-primary">ثانوي</h5>
                       </div>
                     </div>
                   </div>
@@ -116,36 +127,11 @@ $hidden_articles = $Q->query("SELECT * FROM `articles` WHERE `status`='0' ");
                         <div class="d-flex">
                           <div class="wrapper">
                             <h3 class="mb-0 font-weight-semibold"><?php echo $articles_q->num_rows; ?></h3>
-                            <h5 class="mb-0 font-weight-medium text-primary"><?php __("total"); ?></h5>
+                            <h5 class="mb-0 font-weight-medium text-primary">عدد المقالات</h5>
                           </div>
                         </div>
                       </div>
 
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-9 grid-margin">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-lg-4 col-md-6">
-                        <div class="d-flex">
-                          <div class="wrapper">
-                            <h3 class="mb-0 font-weight-semibold"><?php echo $active_articles->num_rows; ?></h3>
-                            <h5 class="mb-0 font-weight-medium text-primary"><?php __("active_articles"); ?></h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
-                        <div class="d-flex">
-                          <div class="wrapper">
-                            <h3 class="mb-0 font-weight-semibold"><?php echo $hidden_articles->num_rows; ?></h3>
-                            <h5 class="mb-0 font-weight-medium text-primary"><?php __("hidden_articles"); ?></h5>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>

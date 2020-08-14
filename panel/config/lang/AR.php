@@ -150,24 +150,8 @@
     "no_admins" => "لا يوجد أي مدير",
     "account_not_found" => "لم يتم إيجاد الحساب",
 
-    "control_articles" => "التحكم في المقالات",
-    "see_customer_profiles" => "الإطلاع على حسابات المستخدمين",
-    "control_video" => "التحكم في الميديا (الفيديوهات)",
-    "control_photos" => "التحكم في الصور",
-    "see_requests" => "الإطلاع على الطلبيات",
-    "edit_requests" => "تعديل الطلبيات",
-    "remove_requests" => "حذف الطلبيات",
-
     "category_not_found" => "لم يتم إيجاد القسم",
     "email_required" => "يجب كتابة البريد الإلكتروني",
-
-    "companies" => "الشركات",
-    "latest_registered_companies" => "آخر الشركات المسجلة",
-    "all_companies" => "كل الشركات",
-    "product_name" => "إسم المنتج",
-    "registration_date" => "تاريخ التسجيل",
-    "added_date" => "تاريخ الإضافة",
-    "total" => "المجموع",
 
     "active_companies" => "شركات فعالة",
     "hidden_companies" => "شركات مخفية",
@@ -194,15 +178,7 @@
     "english" => "الإنجليزية",
     "french" => "الفرنسية",
 
-    "all_products" => "كل المنتجات",
-    "active_products" => "منتجات فعالة",
-    "hidden_products" => "منتجات مخفية",
-
-    "add_product" => "إضافة منتج",
-
-    "active_articles" => "المقالات الفعالة",
-    "hidden_articles" => "المقالات المخفية",
-
-    "all_categories" => "كل الأقسام",
+    "registered" => "المسجلين",
+    "total" => "المجموع",
   ];
 ?>

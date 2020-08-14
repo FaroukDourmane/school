@@ -20,7 +20,7 @@ $av_panel_lang = ["EN","AR"];
 
 // Default Languange
 if( !defined("DEFAULT_PANEL_LANG") ){
-  DEFINE("DEFAULT_PANEL_LANG","EN"); // Change AR for arabic
+  DEFINE("DEFAULT_PANEL_LANG","AR"); // Change AR for arabic
 }
 
 if (isset($_GET["l"])){
