@@ -69,11 +69,6 @@ if( !isset($_SESSION["CURRENT_LANG"]) ){
   $_SESSION["CURRENT_LANG"] = DEFAULT_LANG;
 }
 
-
 $LANG = array();
 
-if ( !isset($_SESSION["mode"]) )
-{
-  $_SESSION["mode"] = "light";
-}
 ?>

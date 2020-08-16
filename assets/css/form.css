@@ -2,106 +2,248 @@
   background: #111;
   margin-top: -50px;
   padding-top: 100px;
-  padding-bottom: 50px; }
+  padding-bottom: 50px;
+}
+.form-container .wrapper {
+  width: 700px;
+  position: relative;
+  margin: 0px auto;
+  background: #303030;
+  box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.1);
+  border-top: 10px #1DA1F2 solid;
+  padding: 50px;
+  padding-bottom: 100px;
+}
+@media screen and (max-width: 750px) {
   .form-container .wrapper {
-    width: 700px;
-    margin: 0px auto;
-    background: #303030;
-    box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.1);
-    border-top: 10px #1DA1F2 solid;
-    padding: 50px;
-    padding-bottom: 100px; }
-    .form-container .wrapper h1 {
-      color: #FFF;
-      font-family: "Cairo", sans-serif;
-      font-weight: 700;
-      text-align: center; }
-    .form-container .wrapper form {
-      font-family: "Cairo", sans-serif;
-      max-width: 300px;
-      margin: 0px auto; }
-      .form-container .wrapper form hr {
-        border: 0;
-        border-top: 1px rgba(255, 255, 255, 0.1) solid;
-        margin: 50px auto; }
-      .form-container .wrapper form h5 {
-        font-family: "Cairo", sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        color: #FFF; }
-      .form-container .wrapper form input {
-        display: block;
-        line-height: 50px;
-        border-radius: 5px;
-        background: #F1F1F1;
-        width: 100%;
-        border: 0;
-        padding: 0px 10px;
-        font-family: "Cairo", sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        color: #555;
-        margin-bottom: 10px; }
-        .form-container .wrapper form input[type="submit"] {
-          background: #7582D5;
-          color: #FFF;
-          margin-top: 50px;
-          cursor: pointer;
-          display: block; }
-      .form-container .wrapper form label.file {
-        display: block;
-        line-height: 50px;
-        margin-bottom: 10px;
-        color: #7582D5;
-        font-weight: 600;
-        font-size: 14px;
-        cursor: pointer;
-        border: 1px #7582D5 solid;
-        padding: 0px 10px;
-        position: relative;
-        border-radius: 5px; }
-        .form-container .wrapper form label.file img {
-          position: absolute;
-          top: 50%;
-          left: 10px;
-          transform: translateY(-50%); }
-        .form-container .wrapper form label.file input {
-          display: none; }
-      .form-container .wrapper form .gender-box {
-        display: flex;
-        background: #F1F1F1;
-        width: 100%;
-        margin: 20px auto;
-        border-radius: 5px;
-        position: relative; }
-        .form-container .wrapper form .gender-box label {
-          width: 50%;
-          text-align: center;
-          color: #333333;
-          font-weight: 600;
-          font-size: 14px;
-          line-height: 50px;
-          cursor: pointer; }
-          .form-container .wrapper form .gender-box label span {
-            position: relative;
-            z-index: 2; }
-          .form-container .wrapper form .gender-box label img {
-            vertical-align: middle;
-            margin-left: 5px; }
-          .form-container .wrapper form .gender-box label .active {
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            width: 150px;
-            height: 50px;
-            background: #7582D5;
-            border: 1px #7582D5 solid;
-            border-radius: 5px;
-            transition: 0.3s;
-            z-index: 1; }
-          .form-container .wrapper form .gender-box label input[type="radio"] {
-            display: none; }
-            .form-container .wrapper form .gender-box label input[type="radio"]:checked + .active {
-              transform: translateX(-100%); }
+    width: calc(100% - 40px);
+  }
+}
+@media screen and (max-width: 400px) {
+  .form-container .wrapper {
+    width: calc(100% - 20px);
+    padding: 50px 20px;
+  }
+}
+.form-container .wrapper.loading::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.8;
+  z-index: 2;
+}
+.form-container .wrapper h1 {
+  color: #FFF;
+  font-family: "Cairo", sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+@media screen and (max-width: 320px) {
+  .form-container .wrapper h1 {
+    font-size: 20px;
+  }
+}
+.form-container .wrapper form {
+  font-family: "Cairo", sans-serif;
+  max-width: 300px;
+  margin: 0px auto;
+}
+.form-container .wrapper form hr {
+  border: 0;
+  border-top: 1px rgba(255, 255, 255, 0.1) solid;
+  margin: 50px auto;
+}
+.form-container .wrapper form h5 {
+  font-family: "Cairo", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFF;
+}
+.form-container .wrapper form input {
+  display: block;
+  line-height: 50px;
+  border-radius: 5px;
+  background: #F1F1F1;
+  width: 100%;
+  border: 0;
+  padding: 0px 10px;
+  font-family: "Cairo", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 10px;
+}
+.form-container .wrapper form input[type=submit] {
+  background: #7582D5;
+  color: #FFF;
+  margin-top: 50px;
+  cursor: pointer;
+  display: block;
+}
+.form-container .wrapper form label.file {
+  display: block;
+  line-height: 50px;
+  margin-bottom: 10px;
+  color: #7582D5;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px #7582D5 solid;
+  padding: 0px 10px;
+  position: relative;
+  border-radius: 5px;
+}
+.form-container .wrapper form label.file img {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+.form-container .wrapper form label.file input {
+  display: none;
+}
+.form-container .wrapper form .gender-box {
+  display: flex;
+  background: #F1F1F1;
+  width: 100%;
+  margin: 20px auto;
+  border-radius: 5px;
+  position: relative;
+}
+.form-container .wrapper form .gender-box label {
+  width: 50%;
+  text-align: center;
+  color: #333333;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 50px;
+  cursor: pointer;
+}
+.form-container .wrapper form .gender-box label span {
+  position: relative;
+  z-index: 2;
+}
+.form-container .wrapper form .gender-box label img {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.form-container .wrapper form .gender-box label .active {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 150px;
+  height: 50px;
+  background: #7582D5;
+  border: 1px #7582D5 solid;
+  border-radius: 5px;
+  transition: 0.3s;
+  z-index: 1;
+}
+@media screen and (max-width: 450px) {
+  .form-container .wrapper form .gender-box label .active {
+    width: 50%;
+  }
+}
+.form-container .wrapper form .gender-box label input[type=radio] {
+  display: none;
+}
+.form-container .wrapper form .gender-box label input[type=radio]:checked + .active {
+  transform: translateX(-100%);
+}
+
+.nice-select .list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.nice-select .option {
+  text-align: right;
+}
+
+.nice-select {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.nice-select .current {
+  display: block;
+  text-align: right;
+  color: #555;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* #########  START LOADING SPINNER  ##### */
+/* ##################################### */
+.loadingContainer {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #DDD;
+  overflow: hidden;
+  transition: 0.6s;
+  opacity: 0;
+  z-index: -99;
+  visibility: hidden;
+}
+
+.loadingContainer.active {
+  opacity: 1;
+  z-index: 99;
+  visibility: visible;
+}
+
+.loadingContainer::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: #222;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0px 0px 10px 0px #1c45ef;
+}
+
+.loadingContainer::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 25px;
+  background: #1c45ef;
+  border-radius: 50% 50% 0 0;
+  z-index: 2;
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateX(-50%) rotate(360deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) rotate(-360deg);
+    opacity: 1;
+  }
+}
+/* #########  END LOADING SPINNER  ##### */
+/* ##################################### */
 
 /*# sourceMappingURL=form.css.map */

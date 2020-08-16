@@ -22,10 +22,10 @@
     <div class="fixed-menu">
       <ul>
         <li class="close"> <a href="#" class="menuToggler"> <img src="assets/svg/menu_toggle.svg" /> إغلاق </a> </li>
-        <li> <a href="#">الرئيسية</a> </li>
+        <li> <a href="index.php">الرئيسية</a> </li>
         <li> <a href="#">إتصل بنا</a> </li>
         <li> <a href="#">من نحن</a> </li>
-        <li> <a href="#">بوابة التسجيل</a> </li>
+        <li> <a href="form.php">بوابة التسجيل</a> </li>
       </ul>
     </div>
     <!-- END Fixed menu -->
@@ -35,10 +35,10 @@
       <div class="top">
         <ul>
           <li class="small"> <a href="#" class="menuToggler"> <img src="assets/svg/menu_toggle.svg" /> </a> </li>
-          <li> <a href="#">الرئيسية</a> </li>
+          <li> <a href="index.php">الرئيسية</a> </li>
           <li> <a href="#">إتصل بنا</a> </li>
           <li> <a href="#">من نحن</a> </li>
-          <li> <a href="#">بوابة التسجيل</a> </li>
+          <li> <a href="form.php">بوابة التسجيل</a> </li>
         </ul>
 
         <div class="number">
@@ -50,7 +50,7 @@
       <div class="content">
         <img src="assets/img/logo.png" class="logo" />
         <h1>مدارس رواد النجاح ترحب بكم</h1>
-        <a href="#" class="btn main">بوابة التسجيل</a>
+        <a href="form.php" class="btn main">بوابة التسجيل</a>
       </div>
     </div>
     <!-- END Header container -->

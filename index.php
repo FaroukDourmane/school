@@ -29,7 +29,7 @@
 
     <!-- articles container -->
     <div class="article-container">
-      <div class="articles-wrapper">
+      <!-- <div class="articles-wrapper">
         <h5>مقالات</h5>
         <div class="wrapper">
           <?php for ($i=0; $i < 6; $i++) { ?>
@@ -40,7 +40,7 @@
             </div>
           <?php } ?>
         </div>
-      </div>
+      </div> -->
       <div class="text">
         <h1>رؤيتنا</h1>
         <p>
@@ -58,8 +58,8 @@
       <div class="side register">
         <h1>بوابة التسجيل</h1>
         <p>سواء كنت طالب أو من أولياء التلاميد , أصبح الآن بإمكانك التسجيل عن طريق موقعنا الإلكتروني و بسهولة تامة </p>
-        <form class="" action="" method="post">
-          <input type="text" name="" value="" placeholder="السجل المدني" />
+        <form class="" action="form.php" method="get">
+          <input type="text" name="id" value="" placeholder="السجل المدني" />
           <input type="submit" name="" value="التسجيل" />
         </form>
       </div>
