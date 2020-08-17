@@ -521,29 +521,14 @@ $(document).ready(function(){
     e.preventDefault();
 
     var title = $(".articleTitle").val();
-    var title_en = $(".articleTitleEN").val();
-    var title_fr = $(".articleTitleFR").val();
-
     var keywords = $(".articleKeywords").val();
     var file_data = $('input[name="coverFile"]').prop('files')[0];
-
     var content = $('.summernote.ar').summernote('code');
-    var contentEN = $('.summernote.en').summernote('code');
-    var contentFR = $('.summernote.fr').summernote('code');
-
-    var category = $('.categorySelect :selected').val();
 
     var form_data = new FormData();
     form_data.append('file', file_data);
-
     form_data.append('title', title);
-    form_data.append('title_en', title_en);
-    form_data.append('title_fr', title_fr);
-
     form_data.append('content', content);
-    form_data.append('contentEN', contentEN);
-    form_data.append('contentFR', contentFR);
-
     form_data.append('keywords', keywords);
     form_data.append('action', "insertArticle");
 
@@ -585,15 +570,11 @@ $(document).ready(function(){
     e.preventDefault();
 
     var title = $(".articleTitle").val();
-    var title_en = $(".articleTitleEN").val();
-    var title_tr = $(".articleTitleTR").val();
 
     var keywords = $(".articleKeywords").val();
     var file_data = $('input[name="coverFile"]').prop('files')[0];
 
     var content = $('.summernote.ar').summernote('code');
-    var contentEN = $('.summernote.en').summernote('code');
-    var contentTR = $('.summernote.tr').summernote('code');
 
     var category = $('.categorySelect :selected').val();
 
@@ -601,12 +582,7 @@ $(document).ready(function(){
     form_data.append('file', file_data);
 
     form_data.append('title', title);
-    form_data.append('title_en', title_en);
-    form_data.append('title_tr', title_tr);
-
     form_data.append('content', content);
-    form_data.append('contentEN', contentEN);
-    form_data.append('contentTR', contentTR);
 
     form_data.append('keywords', keywords);
     form_data.append('action', "editArticle");

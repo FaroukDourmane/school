@@ -45,6 +45,9 @@ $stage = [
             <h1 style="text-align: <?php __('align'); ?>"> <?php __("registered"); ?> </h1>
           </div>
         </div>
+
+        <?php showMessage(); ?>
+
         <!-- Page Title Header Ends-->
         <div class="row">
           <div class="col-md-3 grid-margin">
@@ -115,7 +118,7 @@ $stage = [
         <div class="col-md-12 grid-margin">
           <div class="card">
             <div class="card-body">
-              <div class="d-flex justify-content-between card-head">
+              <!-- <div class="d-flex justify-content-between card-head">
                 <h4 class="card-title mb-0"> <input type="search" name="" value="" placeholder="الإسم" /> </h4>
                 <select class="" name="">
                   <option value=""> كل المراحل </option>
@@ -124,7 +127,7 @@ $stage = [
                   <option value=""> المتوسط </option>
                   <option value=""> الثانوي </option>
                 </select>
-              </div>
+              </div> -->
               <div class="table-responsive">
                 <table class="table table-striped table-hover">
                   <thead>
@@ -140,9 +143,11 @@ $stage = [
 
                     if ( $registered_q->num_rows > 0 ) {
                       while ( $fetch = $registered_q->fetch_assoc() ) {
+                        $data_json = [ 'id' => $fetch["id"] ];
+                        $data_json = json_encode($data_json);
                   ?>
                     <tr>
-                      <td> <?php echo $fetch["name"]; ?> </td>
+                      <td> <a href="#user" id="getAjaxPage" data-json='<?php echo $data_json; ?>'><?php echo $fetch["firstname"]; ?> <?php echo $fetch["family"]; ?></a> </td>
                       <td> <?php echo $stage[$fetch["stage"]]; ?> </td>
                       <td><?php __("since"); echo " ".date_difference($fetch["time"]); ?></td>
                     </tr>

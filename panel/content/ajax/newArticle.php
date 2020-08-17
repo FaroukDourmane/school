@@ -28,14 +28,8 @@
   if ( isset($_POST["action"]) && $_POST["action"] == "insertArticle" )
   {
 
-    $title_ar = mysqli_real_escape_string($Q, $_POST["title"]);
-    $title_en = mysqli_real_escape_string($Q, $_POST["title_en"]);
-    $title_fr = mysqli_real_escape_string($Q, $_POST["title_fr"]);
-
-    $content_ar = mysqli_real_escape_string($Q, $_POST["content"]);
-    $contentEN = mysqli_real_escape_string($Q, $_POST["contentEN"]);
-    $contentFR = mysqli_real_escape_string($Q, $_POST["contentFR"]);
-
+    $title = mysqli_real_escape_string($Q, $_POST["title"]);
+    $content = mysqli_real_escape_string($Q, $_POST["content"]);
     $keywords = mysqli_real_escape_string($Q, $_POST["keywords"]);
     $date = time();
 
@@ -43,7 +37,7 @@
 
     if ( !empty(trim($title)) && !empty(trim($content)) )
     {
-      $insert = $Q->query("INSERT INTO `articles` (`title_ar`,`title_en`,`title_fr`,`keywords`,`content_ar`,`content_en`,`content_fr`,`date`) VALUES ('$title_ar','$title_en','$title_fr','$keywords','$content_ar','$contentEN','$contentFR','$date') ");
+      $insert = $Q->query("INSERT INTO `articles` (`title`,`keywords`,`content`,`time`) VALUES ('$title','$keywords','$content','$date') ");
 
       if ( $insert )
       {

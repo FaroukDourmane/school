@@ -3,7 +3,7 @@ require_once(__DIR__."/../../../config/config.php");
 require_once(__DIR__."/../../config/sessions.php");
 require_once(__DIR__."/../../config/".panel_lang_file());
 
-$query = $Q->query("SELECT * FROM `about` ");
+$query = $Q->query("SELECT * FROM `general` ");
 $fetch = $query->fetch_assoc();
 
 // #################################################
@@ -44,66 +44,6 @@ if ( !admin_logged() )
                               <textarea type="text" class="summernote form-control generalAbout"> <?php echo $fetch["about"]; ?> </textarea>
                             </div>
                           </div>
-
-                        <!-- Marketing & Export -->
-                        <h4 class="card-title"><?php __("marketing_export"); ?></h4>
-                          <div class="form-group row">
-                            <div class="col-sm-9">
-                              <textarea type="text" class="summernote form-control generalAbout"> <?php echo $fetch["about"]; ?> </textarea>
-                            </div>
-                          </div>
-
-                          <!-- About work -->
-                          <h4 class="card-title"><?php __("about_work"); ?></h4>
-                            <div class="form-group row">
-                              <div class="col-sm-9">
-                                <textarea type="text" class="summernote form-control generalAbout"> <?php echo $fetch["about"]; ?> </textarea>
-                              </div>
-                            </div>
-
-                          <!-- SERVICES -->
-                          <h4 class="card-title"><?php __("internal_shipping"); ?></h4>
-                            <div class="form-group row">
-                              <div class="col-sm-9">
-                                <textarea type="text" class="summernote form-control generalAbout"> <?php echo $fetch["about"]; ?> </textarea>
-                              </div>
-                            </div>
-
-                          <h4 class="card-title"><?php __("packingـtoـothers"); ?></h4>
-                            <div class="form-group row">
-                              <div class="col-sm-9">
-                                <textarea type="text" class="summernote form-control generalAbout"> <?php echo $fetch["about"]; ?> </textarea>
-                              </div>
-                            </div>
-
-                          <h4 class="card-title"><?php __("preparing_papers"); ?></h4>
-                            <div class="form-group row">
-                              <div class="col-sm-9">
-                                <textarea type="text" class="summernote form-control generalAbout"> <?php echo $fetch["about"]; ?> </textarea>
-                              </div>
-                            </div>
-
-                          <h4 class="card-title"><?php __("reserve_shipment"); ?></h4>
-                            <div class="form-group row">
-                              <div class="col-sm-9">
-                                <textarea type="text" class="summernote form-control generalAbout"> <?php echo $fetch["about"]; ?> </textarea>
-                              </div>
-                            </div>
-
-                          <h4 class="card-title"><?php __("foreign_shipping_export"); ?></h4>
-                            <div class="form-group row">
-                              <div class="col-sm-9">
-                                <textarea type="text" class="summernote form-control generalAbout"> <?php echo $fetch["about"]; ?> </textarea>
-                              </div>
-                            </div>
-
-                          <h4 class="card-title"><?php __("after_shipment_service"); ?></h4>
-                            <div class="form-group row">
-                              <div class="col-sm-9">
-                                <textarea type="text" class="summernote form-control generalAbout"> <?php echo $fetch["about"]; ?> </textarea>
-                              </div>
-                            </div>
-                          <!-- END SERVICES -->
 
                           <button type="submit" id="generalAbout" class="btn btn-success mr-2"><?php __("update_informations"); ?></button>
                           <input type="reset" class="btn btn-light" value="<?php __("reset"); ?>" />

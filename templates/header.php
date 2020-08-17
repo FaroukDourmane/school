@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
   <!--===============================================================================================-->
     <meta charset="utf-8">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css?v=3">
     <title> مدارس رواد النجاح الأهلية </title>
   </head>
 
@@ -25,7 +25,7 @@
         <li> <a href="index.php">الرئيسية</a> </li>
         <li> <a href="#">إتصل بنا</a> </li>
         <li> <a href="#">من نحن</a> </li>
-        <li> <a href="form.php">بوابة التسجيل</a> </li>
+        <li> <a href="form.php#signupWrapper">بوابة التسجيل</a> </li>
       </ul>
     </div>
     <!-- END Fixed menu -->
@@ -38,7 +38,7 @@
           <li> <a href="index.php">الرئيسية</a> </li>
           <li> <a href="#">إتصل بنا</a> </li>
           <li> <a href="#">من نحن</a> </li>
-          <li> <a href="form.php">بوابة التسجيل</a> </li>
+          <li> <a href="form.php#signupWrapper">بوابة التسجيل</a> </li>
         </ul>
 
         <div class="number">
@@ -50,7 +50,7 @@
       <div class="content">
         <img src="assets/img/logo.png" class="logo" />
         <h1>مدارس رواد النجاح ترحب بكم</h1>
-        <a href="form.php" class="btn main">بوابة التسجيل</a>
+        <a href="form.php#signupWrapper" class="btn main">بوابة التسجيل</a>
       </div>
     </div>
     <!-- END Header container -->

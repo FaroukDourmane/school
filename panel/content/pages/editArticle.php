@@ -100,44 +100,7 @@ $fetch = $query->fetch_assoc();
                             </div>
                           </div>
 
-                          <hr />
-
-                          <!-- English Translation -->
-                          <h4 class="card-title"><?php __("translation"); ?> (<?php __("english"); ?>)</h4>
-                          <div class="form-group row">
-                            <label for="exampleInputEmail2" class="col-sm-3 col-form-label"><?php __("title"); ?> (<?php __("english"); ?>)</label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control articleTitleEN" id="exampleInputEmail2" value="<?php echo $fetch["title_en"]; ?>" placeholder="<?php __("enter_title"); ?>">
-                            </div>
-                          </div>
-                          <!-- Content -->
-                          <div class="form-group row">
-                            <label for="exampleInputPassword2" class="col-sm-3 col-form-label"><?php __("content"); ?> (<?php __("english"); ?>)</label>
-                            <div class="col-sm-9">
-                              <textarea name="name" class="form-control summernote en" rows="8" cols="80"><?php echo $fetch["content_en"]; ?></textarea>
-                            </div>
-                          </div>
-                          <!-- END English Translation -->
-
-                          <hr />
-
-                          <!-- Turkish Translation -->
-                          <h4 class="card-title"><?php __("translation"); ?> (<?php __("turkish"); ?>)</h4>
-                          <div class="form-group row">
-                            <label for="exampleInputEmail2" class="col-sm-3 col-form-label"><?php __("title"); ?> (<?php __("turkish"); ?>)</label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control articleTitleTR" id="exampleInputEmail2" value="<?php echo $fetch["title_tr"]; ?>" placeholder="<?php __("enter_title"); ?>">
-                            </div>
-                          </div>
-                          <!-- Content -->
-                          <div class="form-group row">
-                            <label for="exampleInputPassword2" class="col-sm-3 col-form-label"><?php __("content"); ?> (<?php __("turkish"); ?>)</label>
-                            <div class="col-sm-9">
-                              <textarea name="name" class="form-control summernote tr" rows="8" cols="80"><?php echo $fetch["content_tr"]; ?></textarea>
-                            </div>
-                          </div>
-                          <!-- END Turkish Translation -->
-                          <button type="submit" class="btn btn-success editArticle mr-2"><?php __("add_article"); ?></button>
+                          <button type="submit" class="btn btn-success editArticle mr-2"><?php __("edit_article"); ?></button>
                         </form>
                       </div>
                     </div>

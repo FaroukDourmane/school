@@ -10,12 +10,10 @@ $(document).ready(function(){
     "#articles": "pages/articles.php",
     "#newarticle": "pages/newarticle.php",
     "#editArticle": "pages/editArticle.php",
-    "#categories": "pages/categories.php",
     "#products": "pages/products.php",
-    "#addCategory": "pages/addCateogry.php",
     "#addsocial": "pages/addsocial.php",
-    "#editCategory": "pages/editCategory.php",
     "#products": "pages/products.php",
+    "#user": "pages/user.php",
   };
 
   // AJAX Page Changer

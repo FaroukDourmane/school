@@ -3,10 +3,10 @@
 <link rel="stylesheet" href="assets/nice-select/css/nice-select.css">
 <!-- <script src="assets/datepicker/css/bootstrap-datepicker.standalone.css"></script> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.min.css">
-<link rel="stylesheet" href="assets/css/form.css">
+<link rel="stylesheet" href="assets/css/form.css?v=2">
 
 <div class="form-container">
-  <div class="wrapper">
+  <div class="wrapper" id="signupWrapper">
     <div class="loadingContainer"></div>
 
     <h1> تسجيل طالب جديد </h1>
@@ -41,9 +41,9 @@
 
       <input type="text" name="id_number" value="<?php echo (isset($_GET["id"])) ? $_GET["id"] : ""; ?>" placeholder="رقم السجل المدني" required />
 
-      <select class="" name="">
+      <select name="country">
         <?php foreach ($countries as $key => $value) { ?>
-          <option value="<?php echo $key; ?>" <?php echo ($key == "SA") ? "selected" : ""; ?>><?php echo $value; ?></option>
+          <option value="<?php echo $value; ?>" <?php echo ($key == "SA") ? "selected" : ""; ?>><?php echo $value; ?></option>
         <?php } ?>
       </select>
 
@@ -53,19 +53,36 @@
         <option value="2">متوسط</option>
         <option value="3">ثانوي</option>
       </select>
+</br>
+      <select class="class-primary" name="class-primary">
+        <option value="الأول">الصف الأول</option>
+        <option value="الثاني">الصف الثاني</option>
+        <option value="الثالث">الصف الثالث</option>
+        <option value="الرابع">الصف الرابع</option>
+        <option value="الخامس">الصف الخامس</option>
+        <option value="السادس">الصف السادس</option>
+      </select>
+</br>
+      <select class="class" name="class">
+        <option value="الأول">الصف الأول</option>
+        <option value="الثاني">الصف الثاني</option>
+        <option value="الثالث">الصف الثالث</option>
+      </select>
     </br>
-
+</br>
       <hr>
 
       <label class="file">
         <input type="file" name="residence" value="" />
-        كارت العائلة أو الإقامة
+        الهوية الوطنية
+        /
+        كرت العائلة
         <img src="assets/svg/upload.svg" />
       </label>
 
-      <label class="file">
+      <label class="file active" id="kids">
         <input type="file" name="family_certificate" value="" />
-        شهادة العائلة
+        شهادة الميلاد
         <img src="assets/svg/upload.svg" />
       </label>
 
@@ -80,4 +97,4 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-<script src="assets/js/form.js"></script>
+<script src="assets/js/form.js?v=2"></script>

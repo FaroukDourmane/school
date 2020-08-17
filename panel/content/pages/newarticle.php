@@ -40,11 +40,11 @@ if ( !admin_logged() )
             </div>
 
             <div class="card-body">
-              <h4 class="card-title"><?php __("new_article"); ?> (<?php __("arabic"); ?>)</h4>
+              <h4 class="card-title"><?php __("new_article"); ?></h4>
               <form class="forms-sample">
                 <!-- Title -->
                 <div class="form-group row">
-                  <label for="exampleInputEmail2" class="col-sm-3 col-form-label"><?php __("title"); ?> (<?php __("arabic"); ?>)</label>
+                  <label for="exampleInputEmail2" class="col-sm-3 col-form-label"><?php __("title"); ?></label>
                   <div class="col-sm-9">
                     <input type="text" class="form-control articleTitle" id="exampleInputEmail2" placeholder="<?php __("enter_title"); ?>">
                   </div>
@@ -52,7 +52,7 @@ if ( !admin_logged() )
 
                 <!-- Cover picture -->
                 <div class="form-group row">
-                  <label for="exampleInputEmail2" class="col-sm-3 col-form-label"><?php __("cover_picture"); ?> (<?php __("arabic"); ?>)</label>
+                  <label for="exampleInputEmail2" class="col-sm-3 col-form-label"><?php __("cover_picture"); ?></label>
                   &nbsp;&nbsp;&nbsp;
                   <div class="custom-file col-sm-4">
                     <input type="file" class="custom-file-input" name="coverFile" id="inputGroupFile01">
@@ -74,44 +74,6 @@ if ( !admin_logged() )
                     <input type="text" class="form-control articleKeywords" id="exampleInputEmail2" placeholder="sport,medical,fun...">
                   </div>
                 </div>
-
-                <hr />
-
-                <!-- English Translation -->
-                <h4 class="card-title"><?php __("translation"); ?> (<?php __("english"); ?>)</h4>
-                <div class="form-group row">
-                  <label for="exampleInputEmail2" class="col-sm-3 col-form-label"><?php __("title"); ?> (<?php __("english"); ?>)</label>
-                  <div class="col-sm-9">
-                    <input type="text" class="form-control articleTitleEN" id="exampleInputEmail2" placeholder="<?php __("enter_title"); ?>">
-                  </div>
-                </div>
-                <!-- Content -->
-                <div class="form-group row">
-                  <label for="exampleInputPassword2" class="col-sm-3 col-form-label"><?php __("content"); ?> (<?php __("english"); ?>)</label>
-                  <div class="col-sm-9">
-                    <textarea name="name" class="form-control summernote en" rows="8" cols="80"></textarea>
-                  </div>
-                </div>
-                <!-- END English Translation -->
-
-                <hr />
-
-                <!-- Turkish Translation -->
-                <h4 class="card-title"><?php __("translation"); ?> (<?php __("french"); ?>)</h4>
-                <div class="form-group row">
-                  <label for="exampleInputEmail2" class="col-sm-3 col-form-label"><?php __("title"); ?> (<?php __("french"); ?>)</label>
-                  <div class="col-sm-9">
-                    <input type="text" class="form-control articleTitleFR" id="exampleInputEmail2" placeholder="<?php __("enter_title"); ?>">
-                  </div>
-                </div>
-                <!-- Content -->
-                <div class="form-group row">
-                  <label for="exampleInputPassword2" class="col-sm-3 col-form-label"><?php __("content"); ?> (<?php __("french"); ?>)</label>
-                  <div class="col-sm-9">
-                    <textarea name="name" class="form-control summernote fr" rows="8" cols="80"></textarea>
-                  </div>
-                </div>
-                <!-- END Turkish Translation -->
 
                 <button type="submit" class="btn btn-success insertArticle mr-2"><?php __("add_article"); ?></button>
               </form>

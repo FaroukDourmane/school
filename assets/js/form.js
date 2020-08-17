@@ -15,7 +15,6 @@ $(document).ready(function(){
     processData: false,
     contentType: false,
     success: function(response) {
-      alert(response);
       response = $.parseJSON(response);
 
       if ( response.type == "error" )
@@ -57,8 +56,33 @@ $(document).ready(function(){
           }
         });
       }
+      }
+    });
+  });
+
+  $("select[name='stage']").change(function(){
+    var selected = $(this).find(":selected");
+    var value = $(selected).val();
+
+    $("label.file#kids").removeClass("active");
+    $(".nice-select.class-primary").removeClass("active");
+    $(".nice-select.class").removeClass("active");
+
+    if (value == 0){
+      $("label.file#kids").addClass("active");
+    }
+    else if (value == 1)
+    {
+
+      $(".nice-select.class-primary").addClass("active");
+    }
+    else if (value == 2)
+    {
+      $(".nice-select.class").addClass("active");
+    }
+    else if (value == 3)
+    {
+      $(".nice-select.class").addClass("active");
     }
   });
-});
-
 });

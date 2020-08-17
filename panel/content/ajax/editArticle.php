@@ -29,12 +29,7 @@
   {
 
     $title = mysqli_real_escape_string($Q, $_POST["title"]);
-    $title_en = mysqli_real_escape_string($Q, $_POST["title_en"]);
-    $title_tr = mysqli_real_escape_string($Q, $_POST["title_tr"]);
-
     $content = mysqli_real_escape_string($Q, $_POST["content"]);
-    $contentEN = mysqli_real_escape_string($Q, $_POST["contentEN"]);
-    $contentTR = mysqli_real_escape_string($Q, $_POST["contentTR"]);
 
     $keywords = mysqli_real_escape_string($Q, $_POST["keywords"]);
     $date = time();
@@ -49,7 +44,7 @@
       $path = "../../../assets/articles/$id/";
       $file = upload("file",$path,"images");
 
-      $update = $Q->query("UPDATE `articles` SET `title`='$title',`title_en`='$title_en',`title_tr`='$title_tr',`keywords`='$keywords',`content`='$content',`content_en`='$contentEN',`content_tr`='$contentTR',`date`='$date' WHERE `id`='$id' ");
+      $update = $Q->query("UPDATE `articles` SET `title`='$title',`keywords`='$keywords',`content`='$content',`time`='$date' WHERE `id`='$id' ");
 
       if ( $update )
       {

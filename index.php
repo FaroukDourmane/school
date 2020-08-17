@@ -1,4 +1,7 @@
-<?php require_once("templates/header.php"); ?>
+<?php
+  require_once("templates/header.php");
+  $articles_q = $Q->query("SELECT * FROM `articles` ORDER BY `id` DESC LIMIT 6");
+?>
 
     <!-- Introduction container -->
     <div class="introduction-container">
@@ -29,18 +32,21 @@
 
     <!-- articles container -->
     <div class="article-container">
-      <!-- <div class="articles-wrapper">
-        <h5>مقالات</h5>
-        <div class="wrapper">
-          <?php for ($i=0; $i < 6; $i++) { ?>
-            <div class="item" style="background-image:url('assets/img/graduate.png');">
-              <p>زيارة إلى متحف صقر الجزيرة للطيران</p>
-              <a href="#"></a>
-              <span>قراءة</span>
-            </div>
-          <?php } ?>
+      <?php if ($articles_q->num_rows > 0) { ?>
+        <div class="articles-wrapper">
+          <h5>مقالات</h5>
+          <div class="wrapper">
+            <?php while ($article = $articles_q->fetch_assoc()) { ?>
+              <div class="item" style="background-image:url('<?php echo $article['cover']; ?>');">
+                <p><?php echo $article["title"]; ?></p>
+                <a href="#"></a>
+                <span>قراءة</span>
+              </div>
+            <?php } ?>
+          </div>
         </div>
-      </div> -->
+      <?php } ?>
+
       <div class="text">
         <h1>رؤيتنا</h1>
         <p>
@@ -58,7 +64,7 @@
       <div class="side register">
         <h1>بوابة التسجيل</h1>
         <p>سواء كنت طالب أو من أولياء التلاميد , أصبح الآن بإمكانك التسجيل عن طريق موقعنا الإلكتروني و بسهولة تامة </p>
-        <form class="" action="form.php" method="get">
+        <form class="" action="form.php#signupWrapper" method="GET">
           <input type="text" name="id" value="" placeholder="السجل المدني" />
           <input type="submit" name="" value="التسجيل" />
         </form>
