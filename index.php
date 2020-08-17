@@ -1,6 +1,8 @@
 <?php
   require_once("templates/header.php");
   $articles_q = $Q->query("SELECT * FROM `articles` ORDER BY `id` DESC LIMIT 6");
+  $general_q = $Q->query("SELECT * FROM `general` LIMIT 1");
+  $general = $general_q->fetch_assoc();
 ?>
 
     <!-- Introduction container -->
@@ -14,8 +16,7 @@
             <a href="#"> <img src="assets/svg/whatsapp.svg" /> </a>
           </div>
           <p>
-            منذ 1404 هـ 1984 م ومدارس الشمس تساهم في بناء أجيال داعمة في نهضة الوطن
-            تُعتبر مدارس الشمس الأهلية من أعرق المدارس في مدينة الرياض حيثُ تأسست عام 1404 هـ مواكبةً للتطور العلمي الذي يسمو بأهدافه التربوية ليصنع أجيالاً سلاحها العلم لمواجهة المُستقبل بعقل نافذ وبصيرةٍ ثاقبة. تميزت المدارس في تقديم تعليم ذو جودة عالية باستخدام أحدث وسائل وتقنيات التعليم المنبعثة من رسالتها في بناء مجتمع معرفي يعتز بقيمه وماضية ، مشغوف بتعلم مهارات وعلوم العصر ، وداعما في رقي وتقدم المجتمع
+            <?php echo $general["about"]; ?>
           </p>
         </div>
       </div>
