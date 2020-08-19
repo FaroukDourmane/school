@@ -108,14 +108,6 @@ $hidden_articles = $Q->query("SELECT * FROM `articles` WHERE `status`='0' ");
               <div class="col-12">
                 <h1 style="text-align: <?php __('align'); ?>"> <?php __("blog"); ?> </h1>
               </div>
-
-              <div class="col-md-12">
-                <div class="page-header-toolbar">
-                  <div class="sort-wrapper">
-                    <button type="button" class="btn btn-primary toolbar-item"><?php __("add_article"); ?></button>
-                  </div>
-                </div>
-              </div>
             </div>
             <!-- Page Title Header Ends-->
             <div class="row">

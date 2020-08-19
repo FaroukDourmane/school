@@ -4,6 +4,8 @@
   $general_q = $Q->query("SELECT * FROM `general` LIMIT 1");
   $general = $general_q->fetch_assoc();
 ?>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.min.css">
 
     <!-- Introduction container -->
     <div class="introduction-container">
@@ -33,20 +35,14 @@
 
     <!-- articles container -->
     <div class="article-container">
-      <?php if ($articles_q->num_rows > 0) { ?>
-        <div class="articles-wrapper">
-          <h5>مقالات</h5>
-          <div class="wrapper">
-            <?php while ($article = $articles_q->fetch_assoc()) { ?>
-              <div class="item" style="background-image:url('<?php echo $article['cover']; ?>');">
-                <p><?php echo $article["title"]; ?></p>
-                <a href="#"></a>
-                <span>قراءة</span>
-              </div>
-            <?php } ?>
+        <div class="slide-wrapper">
+          <a class="btn right"> <img src="assets/svg/arrow-right.svg" /> </a>
+          <a class="btn left"> <img src="assets/svg/arrow-right.svg" /> </a>
+          <div class="wrapper owl-carousel">
+            <div class="item" style="background-image:url('assets/img/graduate.png');"></div>
+            <div class="item" style="background-image:url('assets/img/slide_school.jpg');"></div>
           </div>
         </div>
-      <?php } ?>
 
       <div class="text">
         <h1>رؤيتنا</h1>
@@ -82,4 +78,11 @@
     </div>
     <!-- END Signup container -->
 
+    <!-- <script src="assets/datepicker/js/bootstrap-datepicker.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 <?php require_once("templates/footer.php"); ?>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="assets/js/slider.js"></script>

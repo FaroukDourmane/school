@@ -32,6 +32,10 @@
 
     <!-- Header container -->
     <div class="header-container">
+      <div class="mini-logo">
+        <img src="assets/img/logo.png" />
+      </div>
+
       <div class="top">
         <ul>
           <li class="small"> <a href="#" class="menuToggler"> <img src="assets/svg/menu_toggle.svg" /> </a> </li>
