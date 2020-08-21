@@ -29,15 +29,13 @@
   {
 
     $title = mysqli_real_escape_string($Q, $_POST["title"]);
-    $content = mysqli_real_escape_string($Q, $_POST["content"]);
-    $keywords = mysqli_real_escape_string($Q, $_POST["keywords"]);
     $date = time();
 
     $type = "error";
 
-    if ( !empty(trim($title)) && !empty(trim($content)) )
+    if ( !empty(trim($title)) )
     {
-      $insert = $Q->query("INSERT INTO `articles` (`title`,`keywords`,`content`,`time`) VALUES ('$title','$keywords','$content','$date') ");
+      $insert = $Q->query("INSERT INTO `articles` (`title`,`time`) VALUES ('$title','$date') ");
 
       if ( $insert )
       {

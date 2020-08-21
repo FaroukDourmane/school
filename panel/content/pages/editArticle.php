@@ -63,7 +63,7 @@ $fetch = $query->fetch_assoc();
                   <div class="col-12 stretch-card">
                     <div class="card">
                       <div class="card-body">
-                        <h4 class="card-title"><?php __("edit_article"); ?></h4>
+                        <h4 class="card-title"><?php __("edit_ad"); ?></h4>
                         <form class="forms-sample">
                           <!-- Title -->
                           <div class="form-group row">
@@ -83,24 +83,7 @@ $fetch = $query->fetch_assoc();
                             </div>
                           </div>
 
-                          <!-- Content -->
-                          <div class="form-group row">
-                            <label for="exampleInputPassword2" class="col-sm-3 col-form-label"><?php __("content"); ?></label>
-                            <div class="col-sm-9">
-                              <textarea name="name" class="form-control summernote ar" rows="8" cols="80">
-                                <?php echo $fetch["content"]; ?>
-                              </textarea>
-                            </div>
-                          </div>
-
-                          <div class="form-group row">
-                            <label for="exampleInputEmail2" class="col-sm-3 col-form-label"><?php __("keywords"); ?></label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control articleKeywords" id="exampleInputEmail2" value="<?php echo $fetch["keywords"]; ?>" placeholder="sport,medical,fun...">
-                            </div>
-                          </div>
-
-                          <button type="submit" class="btn btn-success editArticle mr-2"><?php __("edit_article"); ?></button>
+                          <button type="submit" class="btn btn-success editArticle mr-2"><?php __("edit"); ?></button>
                         </form>
                       </div>
                     </div>
@@ -113,17 +96,5 @@ $fetch = $query->fetch_assoc();
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
-          <script type="text/javascript">
-            $(function() {
-              $('.summernote').summernote({
-                height: 400,
-              });
-
-              /* $('form').on('submit', function (e) {
-                e.preventDefault();
-                alert($('.summernote').summernote('code'));
-              }); */
-            });
-          </script>
 
 <input type="hidden" name="hiddenKey" value="<?php echo $_SESSION["_TOKEN"]; ?>" />

@@ -29,9 +29,6 @@
   {
 
     $title = mysqli_real_escape_string($Q, $_POST["title"]);
-    $content = mysqli_real_escape_string($Q, $_POST["content"]);
-
-    $keywords = mysqli_real_escape_string($Q, $_POST["keywords"]);
     $date = time();
     $id = intval($_SESSION["article_id"]);
     $type = "error";
@@ -39,12 +36,12 @@
     $query = $Q->query("SELECT * FROM `articles` WHERE `id`='$id' ");
     $fetch = $query->fetch_assoc();
 
-    if ( !empty(trim($title)) && !empty(trim($content)) )
+    if ( !empty(trim($title)) )
     {
       $path = "../../../assets/articles/$id/";
       $file = upload("file",$path,"images");
 
-      $update = $Q->query("UPDATE `articles` SET `title`='$title',`keywords`='$keywords',`content`='$content',`time`='$date' WHERE `id`='$id' ");
+      $update = $Q->query("UPDATE `articles` SET `title`='$title',`time`='$date' WHERE `id`='$id' ");
 
       if ( $update )
       {
@@ -67,32 +64,6 @@
       $text = __("missing_inputs",true);
     }
   }
-
-  /*
-  $path = "../../../assets/files/";
-  $file = upload("file",$path,"pdf");
-  $type = "error";
-
-  if ( $file )
-  {
-    $old_file = $fetch["catalog"];
-    $sql_path = "assets/files/".$file;
-    $update = $Q->query("UPDATE `general` SET `catalog`='$sql_path' ");
-
-    if ( $update ) {
-      $old_file_src = "../../../".$old_file;
-      delete_file($old_file_src);
-
-      $type = "success";
-      $text = __("update_success",true);
-    }else{
-      delete_file("../../../".$sql_path);
-      $text = __("update_error",true);
-    }
-  }else{
-    $text = __("upload_error",true);
-  }
-  */
 
   $response = [
     "type" => $type,

@@ -40,7 +40,7 @@ if ( !admin_logged() )
             </div>
 
             <div class="card-body">
-              <h4 class="card-title"><?php __("new_article"); ?></h4>
+              <h4 class="card-title"><?php __("new_ad"); ?></h4>
               <form class="forms-sample">
                 <!-- Title -->
                 <div class="form-group row">
@@ -60,22 +60,7 @@ if ( !admin_logged() )
                   </div>
                 </div>
 
-                <!-- Content -->
-                <div class="form-group row">
-                  <label for="exampleInputPassword2" class="col-sm-3 col-form-label"><?php __("content"); ?></label>
-                  <div class="col-sm-9">
-                    <textarea name="name" class="form-control summernote ar" rows="8" cols="80"></textarea>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <label for="exampleInputEmail2" class="col-sm-3 col-form-label"><?php __("keywords"); ?></label>
-                  <div class="col-sm-9">
-                    <input type="text" class="form-control articleKeywords" id="exampleInputEmail2" placeholder="sport,medical,fun...">
-                  </div>
-                </div>
-
-                <button type="submit" class="btn btn-success insertArticle mr-2"><?php __("add_article"); ?></button>
+                <button type="submit" class="btn btn-success insertArticle mr-2"><?php __("add"); ?></button>
               </form>
             </div>
           </div>
@@ -88,17 +73,5 @@ if ( !admin_logged() )
 </div>
 <!-- content-wrapper ends -->
 <!-- partial:../../partials/_footer.html -->
-<script type="text/javascript">
-  $(function() {
-    $('.summernote').summernote({
-      height: 400,
-    });
-
-    /* $('form').on('submit', function (e) {
-      e.preventDefault();
-      alert($('.summernote').summernote('code'));
-    }); */
-  });
-</script>
 
 <input type="hidden" name="hiddenKey" value="<?php echo $_SESSION["_TOKEN"]; ?>" />

@@ -1,6 +1,6 @@
 <?php
   require_once("templates/header.php");
-  $articles_q = $Q->query("SELECT * FROM `articles` ORDER BY `id` DESC LIMIT 6");
+  $articles_q = $Q->query("SELECT * FROM `articles` ORDER BY `id` DESC");
   $general_q = $Q->query("SELECT * FROM `general` LIMIT 1");
   $general = $general_q->fetch_assoc();
 ?>
@@ -35,14 +35,17 @@
 
     <!-- articles container -->
     <div class="article-container">
+      <?php if ($articles_q->num_rows > 0) { ?>
         <div class="slide-wrapper">
           <a class="btn right"> <img src="assets/svg/arrow-right.svg" /> </a>
           <a class="btn left"> <img src="assets/svg/arrow-right.svg" /> </a>
           <div class="wrapper owl-carousel">
-            <div class="item" style="background-image:url('assets/img/graduate.png');"></div>
-            <div class="item" style="background-image:url('assets/img/slide_school.jpg');"></div>
+            <?php while ( $slide = $articles_q->fetch_assoc() ) { ?>
+              <div class="item" style="background-image:url('<?php echo $slide['cover']; ?>');"></div>
+            <?php } ?>
           </div>
         </div>
+      <?php } ?>
 
       <div class="text">
         <h1>رؤيتنا</h1>

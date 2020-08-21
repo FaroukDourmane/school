@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
   <!--===============================================================================================-->
     <meta charset="utf-8">
-    <link rel="stylesheet" href="assets/css/main.css?v=3">
+    <link rel="stylesheet" href="assets/css/main.css?v=4">
     <title> مدارس رواد النجاح الأهلية </title>
   </head>
 

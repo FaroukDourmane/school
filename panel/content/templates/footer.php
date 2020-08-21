@@ -43,8 +43,8 @@
 <script src="../../assets/summernote/dist/summernote.min.js"></script>
 
 <!-- Pages control with AJAX -->
-<script src="js/page-control.js"></script>
-<script src="js/submits.js"></script>
+<script src="js/page-control.js?v=101"></script>
+<script src="js/submits.js?v=101"></script>
 <script src="js/dashboard.js"></script>
 <!-- END : Pages control with AJAX -->
 

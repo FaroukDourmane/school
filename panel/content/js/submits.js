@@ -521,15 +521,11 @@ $(document).ready(function(){
     e.preventDefault();
 
     var title = $(".articleTitle").val();
-    var keywords = $(".articleKeywords").val();
     var file_data = $('input[name="coverFile"]').prop('files')[0];
-    var content = $('.summernote.ar').summernote('code');
 
     var form_data = new FormData();
     form_data.append('file', file_data);
     form_data.append('title', title);
-    form_data.append('content', content);
-    form_data.append('keywords', keywords);
     form_data.append('action', "insertArticle");
 
     $.ajax({
@@ -570,21 +566,12 @@ $(document).ready(function(){
     e.preventDefault();
 
     var title = $(".articleTitle").val();
-
-    var keywords = $(".articleKeywords").val();
     var file_data = $('input[name="coverFile"]').prop('files')[0];
-
-    var content = $('.summernote.ar').summernote('code');
-
-    var category = $('.categorySelect :selected').val();
 
     var form_data = new FormData();
     form_data.append('file', file_data);
 
     form_data.append('title', title);
-    form_data.append('content', content);
-
-    form_data.append('keywords', keywords);
     form_data.append('action', "editArticle");
 
 

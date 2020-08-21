@@ -130,12 +130,6 @@
                   <li class="nav-item">
                     <a class="nav-link" id="getAjaxPage" href="#login"><?php __("login_informations"); ?></a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="getAjaxPage" href="#slideshow"><?php __("slideshow"); ?></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="getAjaxPage" href="#contact"><?php __("contact"); ?></a>
-                  </li>
                 </ul>
               </div>
             </li>
@@ -150,25 +144,14 @@
             </li>
             <!-- END Requests -->
 
-            <!-- Blog -->
+            <!-- Requests -->
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#blog-settings" aria-expanded="false" aria-controls="ui-basic">
-                <i class="menu-icon typcn typcn-coffee"></i>
-                <span class="menu-title"><?php __("blog"); ?></span>
-                <i class="menu-arrow"></i>
+              <a class="nav-link" id="getAjaxPage" href="#articles">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title"><?php __("advertisements"); ?></span>
               </a>
-              <div class="collapse" id="blog-settings">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" id="getAjaxPage" href="#newarticle"><?php __("new_article"); ?></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="getAjaxPage" href="#articles"><?php __("view_articles"); ?></a>
-                  </li>
-                </ul>
-              </div>
             </li>
-            <!-- END Blog -->
+            <!-- END Requests -->
 
           </ul>
         </nav>

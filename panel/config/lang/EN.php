@@ -181,5 +181,9 @@
 
     "registered" => "Registered",
     "total" => "Total",
+
+    "advertisements" => "Advertisements",
+    "new_ad" => "New advertisement",
+    "edit_ad" => "Edit advertisement",
   ];
 ?>

@@ -35,7 +35,7 @@ if ( isset($_SESSION["article_id"]) )
 
                   <div class="col-12 mb-5">
                     <?php showMessage(); ?>
-                    <a href="#newarticle" id="getAjaxPage" class="btn btn-success"> <?php __("new_article"); ?> </a>
+                    <a href="#newarticle" id="getAjaxPage" class="btn btn-success"> <?php __("new_ad"); ?> </a>
                   </div>
 
                   <!-- Email change -->
@@ -54,8 +54,6 @@ if ( isset($_SESSION["article_id"]) )
                             <img class="card-img-top" src="../../<?php echo $fetch["cover"]; ?>" alt="" />
                             <div class="card-body">
                               <h5 class="card-title"><?php echo $fetch["title"]; ?></h5>
-                              <p class="card-text"><?php echo trim_text($content); ?></p>
-                              <p class="card-text"><small class="text-muted"><?php echo date("d/m/Y h:i", intval($fetch["time"])); ?></small></p>
                             </div>
 
                             <div class="card-footer">
@@ -66,7 +64,7 @@ if ( isset($_SESSION["article_id"]) )
                         </div>
                       <?php } ?>
                     <?php }else{ ?>
-                      <p class="text-muted"> No articles </p>
+                      <p class="text-muted"> No results </p>
                     <?php } ?>
 
                   </div>

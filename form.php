@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="assets/nice-select/css/nice-select.css">
 <!-- <script src="assets/datepicker/css/bootstrap-datepicker.standalone.css"></script> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.min.css">
-<link rel="stylesheet" href="assets/css/form.css?v=2">
+<link rel="stylesheet" href="assets/css/form.css?v=4">
 
 <div class="form-container">
   <div class="wrapper" id="signupWrapper">
