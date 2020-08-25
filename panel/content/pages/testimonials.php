@@ -31,7 +31,7 @@ $default_avatar = "../../assets/svg/user.svg";
     <!-- Product's statistics -->
         <div class="row page-title-header">
           <div class="col-12">
-            <h1 style="text-align: <?php __('align'); ?>"> <?php __("products"); ?> </h1>
+            <h1 style="text-align: <?php __('align'); ?>"> <?php __("testimonials"); ?> </h1>
           </div>
         </div>
 

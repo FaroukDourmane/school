@@ -650,6 +650,10 @@ body, html {
           margin: 0; }
           .footer-container .wrapper .item iframe {
             max-width: 100%; } }
+    @media screen and (max-width: 500px) {
+      .footer-container .wrapper .item {
+        width: 100%;
+        text-align: center; } }
   .footer-container .copyrights {
     display: flex;
     background: #FFFFFF;
