@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
   <!--===============================================================================================-->
     <meta charset="utf-8">
-    <link rel="stylesheet" href="assets/css/main.css?v=4">
+    <link rel="stylesheet" href="assets/css/main.css?v=6">
     <title> مدارس رواد النجاح الأهلية </title>
   </head>
 
@@ -32,12 +32,9 @@
 
     <!-- Header container -->
     <div class="header-container">
-      <div class="mini-logo">
-        <img src="assets/img/logo.png" />
-      </div>
-
       <div class="top">
         <ul>
+          <li class="small"> <img class="mini-logo" src="assets/img/logo-black.png" /></li>
           <li class="small"> <a href="#" class="menuToggler"> <img src="assets/svg/menu_toggle.svg" /> </a> </li>
           <li> <a href="index.php">الرئيسية</a> </li>
           <li> <a href="#">إتصل بنا</a> </li>

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "kufi";
+  src: url("../fonts/NotoKufiArabic-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 a {
   text-decoration: none; }
 
@@ -5,6 +10,16 @@ ul {
   margin: 0px;
   padding: 0px;
   list-style: none; }
+
+button {
+  border: 0;
+  font-family: "kufi";
+  font-size: 15px;
+  line-height: 50px;
+  padding: 0px 20px;
+  vertical-align: -2px;
+  border-radius: 5px;
+  cursor: pointer; }
 
 p, h2, h1 {
   margin: 0px; }
@@ -114,7 +129,7 @@ body, html {
     line-height: 70px;
     position: relative;
     display: flex;
-    font-family: "Cairo", sans-serif;
+    font-family: "kufi";
     padding: 0px 20px;
     margin-bottom: 80px; }
     .header-container .top::after {
@@ -144,13 +159,16 @@ body, html {
         margin-left: 20px; }
         .header-container .top ul li.small {
           display: none; }
+          .header-container .top ul li.small img.mini-logo {
+            height: 40px;
+            vertical-align: middle; }
         .header-container .top ul li a {
           display: inline-block;
           color: #333333;
           font-size: 16px; }
           .header-container .top ul li a img {
             vertical-align: middle; }
-        @media screen and (max-width: 520px) {
+        @media screen and (max-width: 600px) {
           .header-container .top ul li {
             display: none; }
             .header-container .top ul li.small {
@@ -160,6 +178,9 @@ body, html {
       color: #333333;
       font-size: 16px;
       text-align: left; }
+      @media screen and (max-width: 600px) {
+        .header-container .top .number {
+          display: none; } }
       .header-container .top .number img {
         vertical-align: middle;
         margin-right: 5px; }
@@ -168,6 +189,9 @@ body, html {
   display: flex;
   padding: 20px;
   justify-content: center; }
+  @media screen and (max-width: 600px) {
+    .introduction-container {
+      display: none; } }
   .introduction-container .side.flex {
     width: 700px;
     display: flex;
@@ -185,7 +209,7 @@ body, html {
         width: 100%;
         margin: 10px auto;
         padding: 20px;
-        font-family: "Cairo", sans-serif;
+        font-family: "kufi";
         color: #555555;
         font-size: 13px;
         text-align: center;
@@ -268,10 +292,44 @@ body, html {
   @media screen and (max-width: 1280px) {
     .article-container {
       flex-direction: column; } }
+  .article-container .small-signup {
+    display: none;
+    border-radius: 10px;
+    background: #f1f1f1;
+    margin: 20px auto;
+    width: calc(100% - 100px);
+    font-family: "kufi";
+    text-align: center;
+    box-shadow: 0px 0px 20px 10px #f1f1f1; }
+    .article-container .small-signup h5 {
+      color: #555;
+      font-size: 20px; }
+    .article-container .small-signup p {
+      display: block;
+      margin: 0 auto;
+      width: 90%;
+      font-size: 15px;
+      color: #888; }
+    .article-container .small-signup form {
+      margin: 20px auto;
+      display: block; }
+      .article-container .small-signup form input {
+        display: inline-block;
+        border: 0;
+        line-height: 50px;
+        padding: 0px 10px;
+        font-family: "kufi"; }
+      .article-container .small-signup form button[type="submit"] {
+        background: #7582D5;
+        color: #FFF;
+        font-size: 20px;
+        cursor: pointer; }
+    @media screen and (max-width: 600px) {
+      .article-container .small-signup {
+        display: block; } }
   .article-container .text {
     flex-shrink: 0;
     text-align: center;
-    font-family: "Cairo", sans-serif;
     padding: 50px;
     position: relative; }
     .article-container .text * {
@@ -281,12 +339,14 @@ body, html {
       color: #7582D5;
       font-size: 50px;
       font-weight: 700;
-      background: #f9f9f9; }
+      background: #f9f9f9;
+      font-family: "Cairo", sans-serif; }
     .article-container .text p {
-      font-size: 30px;
+      font-size: 21px;
       color: #555555;
       max-width: 500px;
-      background: #f9f9f9; }
+      background: #f9f9f9;
+      font-family: "kufi"; }
     .article-container .text::after {
       content: "";
       position: absolute;
@@ -309,6 +369,10 @@ body, html {
       .article-container .slide-wrapper {
         max-width: 600px;
         width: calc(100% - 60px); } }
+    @media screen and (max-width: 600px) {
+      .article-container .slide-wrapper {
+        width: calc(100% - 100px);
+        margin: 0 auto; } }
     .article-container .slide-wrapper .btn {
       position: absolute;
       top: 50%;
@@ -336,7 +400,6 @@ body, html {
       border-radius: 10px;
       height: 100%;
       width: 100%;
-      background: #f1f1f1;
       position: relative;
       direction: ltr; }
       .article-container .slide-wrapper .wrapper .item {
@@ -345,7 +408,8 @@ body, html {
         border-radius: 10px;
         background-size: contain !important;
         background-position: center !important;
-        background-repeat: no-repeat !important; }
+        background-repeat: no-repeat !important;
+        border-radius: 10px; }
   @media screen and (max-width: 1280px) {
     .article-container .text p {
       margin: 50px auto; } }
@@ -374,7 +438,7 @@ body, html {
     font-family: "Cairo", sans-serif;
     padding: 50px; }
     .signup-container .side.whatsapp {
-      background: #F9F9F9;
+      background: #f1f1f1;
       position: relative;
       padding-bottom: 270px; }
       .signup-container .side.whatsapp::after {
@@ -387,6 +451,12 @@ body, html {
         background: url("../svg/whatsapp_vector.svg");
         background-size: cover;
         background-position: top; }
+      @media screen and (max-width: 600px) {
+        .signup-container .side.whatsapp {
+          background: #FFF;
+          padding-bottom: 70px; }
+          .signup-container .side.whatsapp::after {
+            display: none; } }
       .signup-container .side.whatsapp h5 {
         color: #333333;
         font-size: 20px;
@@ -437,6 +507,9 @@ body, html {
       background-size: cover;
       background-position: center;
       position: relative; }
+      @media screen and (max-width: 600px) {
+        .signup-container .side.register {
+          display: none; } }
       .signup-container .side.register * {
         position: relative;
         z-index: 2; }
@@ -480,15 +553,20 @@ body, html {
           background: #7582D5;
           color: #FFF;
           font-size: 20px;
-          cursor: pointer; }
+          cursor: pointer;
+          display: block;
+          width: 100%; }
   @media screen and (max-width: 950px) {
     .signup-container {
       flex-direction: column; }
       .signup-container .side {
         width: 100%; } }
+  @media screen and (max-width: 600px) {
+    .signup-container {
+      box-shadow: 0 -5px 50px 0px rgba(0, 0, 0, 0.1); } }
 
 .footer-container {
-  background: #040404;
+  background: #34373c;
   position: relative;
   font-family: "Cairo", sans-serif; }
   .footer-container::before {
@@ -562,6 +640,16 @@ body, html {
           .footer-container .wrapper .item:last-child {
             border-bottom: 0;
             padding-bottom: 0; } }
+    @media screen and (max-width: 600px) {
+      .footer-container .wrapper {
+        flex-direction: row;
+        align-items: flex-start; }
+        .footer-container .wrapper .item {
+          width: 50%;
+          border-bottom: 0;
+          margin: 0; }
+          .footer-container .wrapper .item iframe {
+            max-width: 100%; } }
   .footer-container .copyrights {
     display: flex;
     background: #FFFFFF;
@@ -586,17 +674,6 @@ body, html {
         .footer-container .copyrights ul {
           display: none; } }
 
-.mini-logo {
-  padding: 20px;
-  text-align: center;
-  background: #222;
-  display: none; }
-  .mini-logo img {
-    height: 70px; }
-  @media screen and (max-width: 600px) {
-    .mini-logo {
-      display: block; } }
-
 @media screen and (max-width: 600px) {
   .header-container {
     background: #f1f1f1;
@@ -605,6 +682,69 @@ body, html {
     .header-container::before, .header-container::after {
       display: none; }
     .header-container .content {
-      display: none; } }
+      display: none; }
+    .header-container .top {
+      box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px; }
+      .header-container .top::after {
+        display: none; }
+      .header-container .top ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-between; } }
+
+.testimonials-container {
+  background: #F1F1F1;
+  padding: 20px;
+  margin: 0 auto;
+  width: 90%;
+  display: none; }
+  @media screen and (max-width: 600px) {
+    .testimonials-container {
+      display: block; } }
+  .testimonials-container .top {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between; }
+    .testimonials-container .top a {
+      display: inline-block;
+      line-height: 35px;
+      width: 35px;
+      border-radius: 50%;
+      text-align: center;
+      background: #646464;
+      cursor: pointer; }
+      .testimonials-container .top a:hover {
+        background: #34373C; }
+      .testimonials-container .top a img {
+        vertical-align: -3px;
+        width: 15px;
+        height: 15px; }
+      .testimonials-container .top a.left img {
+        transform-origin: center;
+        transform: rotate(180deg); }
+  .testimonials-container .wrapper .item {
+    text-align: center;
+    font-family: "kufi"; }
+    .testimonials-container .wrapper .item .avatar {
+      display: block;
+      width: 50px;
+      height: 50px;
+      background-color: #34373C;
+      margin: 0 auto;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+      background-size: 50px !important; }
+    .testimonials-container .wrapper .item h5 {
+      color: #34373C;
+      font-size: 15px;
+      margin: 0; }
+    .testimonials-container .wrapper .item p {
+      max-width: 300px;
+      margin: 10px auto;
+      font-size: 0.83em;
+      color: #666; }
 
 /*# sourceMappingURL=main.css.map */

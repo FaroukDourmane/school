@@ -14,6 +14,9 @@ $(document).ready(function(){
     "#addsocial": "pages/addsocial.php",
     "#products": "pages/products.php",
     "#user": "pages/user.php",
+    "#testimonials": "pages/testimonials.php",
+    "#addTestimonial": "pages/add-testimonial.php",
+    "#editTestimonial": "pages/editTestimonial.php"
   };
 
   // AJAX Page Changer

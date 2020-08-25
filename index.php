@@ -3,6 +3,8 @@
   $articles_q = $Q->query("SELECT * FROM `articles` ORDER BY `id` DESC");
   $general_q = $Q->query("SELECT * FROM `general` LIMIT 1");
   $general = $general_q->fetch_assoc();
+
+  $testimonials_q = $Q->query("SELECT * FROM `testimonials` ORDER BY `id` DESC ");
 ?>
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.min.css">
@@ -47,6 +49,15 @@
         </div>
       <?php } ?>
 
+      <div class="small-signup">
+        <h5>بوابة التسجيل</h5>
+        <p>سواء كنت طالب أو من أولياء التلاميد , أصبح الآن بإمكانك التسجيل عن طريق موقعنا الإلكتروني و بسهولة تامة</p>
+        <form class="" action="form.php#signupWrapper" method="GET">
+          <input type="text" name="id" value="" placeholder="السجل المدني" />
+          <button type="submit" name="">التسجيل</button>
+        </form>
+      </div>
+
       <div class="text">
         <h1>رؤيتنا</h1>
         <p>
@@ -59,6 +70,30 @@
     </div>
     <!-- END articles container -->
 
+    <?php if ( $testimonials_q->num_rows > 0 ) { ?>
+    <!-- Testimonials -->
+    <div class="testimonials-container">
+      <div class="top">
+        <a class="slide right"> <img src="assets/svg/arrow-right.svg" /> </a>
+        <a class="slide left"> <img src="assets/svg/arrow-right.svg" /> </a>
+      </div>
+
+      <?php $default_avatar = "assets/svg/user.svg"; ?>
+
+      <div class="wrapper" dir="ltr">
+        <?php while ( $testimonial = $testimonials_q->fetch_assoc() ) { ?>
+          <div class="item">
+            <div class="avatar" style="background-image:url('<?php echo (!empty(trim($testimonial['avatar'])) && file_exists($testimonial['avatar'])) ? $testimonial['avatar'] : $default_avatar; ?>');"></div>
+            <h5><?php echo $testimonial["name"]; ?></h5>
+            <p><?php echo $testimonial["content"]; ?></p>
+          </div>
+        <?php } ?>
+      </div>
+    </div>
+    <!-- END Testimonials -->
+    <?php } ?>
+
+
     <!-- Signup container -->
     <div class="signup-container">
       <div class="side register">
@@ -66,7 +101,7 @@
         <p>سواء كنت طالب أو من أولياء التلاميد , أصبح الآن بإمكانك التسجيل عن طريق موقعنا الإلكتروني و بسهولة تامة </p>
         <form class="" action="form.php#signupWrapper" method="GET">
           <input type="text" name="id" value="" placeholder="السجل المدني" />
-          <input type="submit" name="" value="التسجيل" />
+          <button type="submit" name="">التسجيل</button>
         </form>
       </div>
       <div class="side whatsapp">
@@ -88,4 +123,4 @@
 <?php require_once("templates/footer.php"); ?>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="assets/js/slider.js"></script>
+<script src="assets/js/slider.js?v=2"></script>

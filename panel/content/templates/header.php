@@ -153,6 +153,15 @@
             </li>
             <!-- END Requests -->
 
+            <!-- Requests -->
+            <li class="nav-item">
+              <a class="nav-link" id="getAjaxPage" href="#testimonials">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title"><?php __("testimonials"); ?></span>
+              </a>
+            </li>
+            <!-- END Requests -->
+
           </ul>
         </nav>
 

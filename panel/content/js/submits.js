@@ -159,7 +159,6 @@ $(document).ready(function(){
     }
   });
 
-
   // When Deleting Item
   $(document).on("click",".deleteItem",function(){
 
@@ -170,6 +169,7 @@ $(document).ready(function(){
       "deleteProduct": "ajax/delete.php",
       "deleteMedia": "ajax/delete.php",
       "deleteAdmin": "ajax/deleteAdmin.php",
+      "deleteTestimonial": "ajax/deleteTestimonial.php",
     };
 
     var action = $(this).attr("id");
@@ -201,42 +201,26 @@ $(document).ready(function(){
     }
   });
 
-
-  // ADD NEW PRODUCT
-  $(document).on("click",".insertProduct",function(e){
-
+  // Add Testimonial
+  $(document).on("click",".addTestimonial",function(e){
     e.preventDefault();
     $(".ajaxContainer").addClass("loading");
     $(".loadingContainer").addClass("active");
 
-    var category = $(".selectCategory :selected").val();
-    var name = $(".productName").val();
-    var description = $(".productDescription").val();
-    var price_tl = $(".price_tl").val();
-    var price_usd = $(".price_usd").val();
-    var productWeight = $(".productWeight").val();
+    var avatar = $('input[name="avatar"]').prop('files')[0];
+    var client_name = $(".client_name").val();
+    var testimonial_content = $(".testimonial_content").val();
 
-    var cover_file = $('input[name="coverFile"]').prop('files')[0];
-    var gallery_files = $('input[name="galleryFiles[]"]').prop('files')[0];
-    var gallery_files_count = $('input[name="galleryFiles[]"]').prop('files').length;
-
-    var gallery_array = [];
 
     var form_data = new FormData();
 
-    form_data.append('category', category);
-    form_data.append('name', name);
-    form_data.append('description', description);
-
-    form_data.append('price_tl', price_tl);
-    form_data.append('price_usd', price_usd);
-    form_data.append('productWeight', productWeight);
-
-    form_data.append('cover', cover_file);
-    form_data.append('action', "insertArticle");
+    form_data.append('avatar', avatar);
+    form_data.append('client_name', client_name);
+    form_data.append('testimonial_content', testimonial_content);
+    form_data.append('action', "addTestimonial");
 
     $.ajax({
-        url: 'ajax/addProduct.php',
+        url: 'ajax/addTestimonial.php',
         dataType: 'text',  // what to expect back from the PHP script, if anything
         cache: false,
         contentType: false,
@@ -245,49 +229,70 @@ $(document).ready(function(){
         type: 'post',
         success: function(response){
           response = $.parseJSON(response);
-
-          if ( response.type == "success" )
-          {
-
-            if ( gallery_files_count > 0 )
-            {
-
-              for (var i = 0; i < gallery_files_count; i++) {
-                gallery_file = $('input[name="galleryFiles[]"]').prop('files')[i];
-                var data = new FormData();
-                data.append('gallery', gallery_file);
-                data.append('action', "upload_gallery");
-                data.append('id', response.id);
-
-                $.ajax({
-                    url: 'ajax/addProduct.php',
-                    dataType: 'text',  // what to expect back from the PHP script, if anything
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                    data: data,
-                    type: 'post',
-                    success: function(result){}
-                 });
-
-              }
-            }
-          }
-
           pushNotification(response.text,response.type);
 
           if ( response.type == "success" ) {
-            location.hash = "#products";
+            location.hash = "#testimonials";
             var pages = {
-              "#products": "pages/products.php",
+              "#testimonials": "pages/testimonials.php",
             }
             initialize_page(pages);
 
+            $(".ajaxContainer").removeClass("loading");
+            $(".loadingContainer").removeClass("active");
+          }else{
+            $(".ajaxContainer").removeClass("loading");
+            $(".loadingContainer").removeClass("active");
           }
+        }
+     });
 
-          $(".ajaxContainer").removeClass("loading");
-          $(".loadingContainer").removeClass("active");
+  });
 
+  //edit Testimonial
+  $(document).on("click",".editTestimonial",function(e){
+
+    e.preventDefault();
+    $(".ajaxContainer").addClass("loading");
+    $(".loadingContainer").addClass("active");
+
+    var avatar = $('input[name="avatar"]').prop('files')[0];
+    var client_name = $(".client_name").val();
+    var testimonial_content = $(".testimonial_content").val();
+
+
+    var form_data = new FormData();
+
+    form_data.append('avatar', avatar);
+    form_data.append('client_name', client_name);
+    form_data.append('testimonial_content', testimonial_content);
+    form_data.append('action', "editTestimonial");
+
+    $.ajax({
+        url: 'ajax/editTestimonial.php',
+        dataType: 'text',  // what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        type: 'post',
+        success: function(response){
+          response = $.parseJSON(response);
+          pushNotification(response.text,response.type);
+
+          if ( response.type == "success" ) {
+            location.hash = "#testimonials";
+            var pages = {
+              "#testimonials": "pages/testimonials.php",
+            }
+            initialize_page(pages);
+
+            $(".ajaxContainer").removeClass("loading");
+            $(".loadingContainer").removeClass("active");
+          }else{
+            $(".ajaxContainer").removeClass("loading");
+            $(".loadingContainer").removeClass("active");
+          }
         }
      });
 

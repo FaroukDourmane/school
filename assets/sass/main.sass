@@ -1,3 +1,10 @@
+@font-face
+  font-family: "kufi"
+  src: url('../fonts/NotoKufiArabic-Regular.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+
+$kufi: 'kufi'
 $cairo: 'Cairo', sans-serif
 
 a
@@ -7,6 +14,16 @@ ul
   margin: 0px
   padding: 0px
   list-style: none
+
+button
+  border: 0
+  font-family: $kufi
+  font-size: 15px
+  line-height: 50px
+  padding: 0px 20px
+  vertical-align: -2px
+  border-radius: 5px
+  cursor: pointer
 
 p,h2,h1
   margin: 0px
@@ -117,7 +134,7 @@ body, html
     line-height: 70px
     position: relative
     display: flex
-    font-family: $cairo
+    font-family: $kufi
     padding: 0px 20px
     margin-bottom: 80px
     &::after
@@ -147,13 +164,16 @@ body, html
         margin-left: 20px
         &.small
           display: none
+          img.mini-logo
+            height: 40px
+            vertical-align: middle
         a
           display: inline-block
           color: #333333
           font-size: 16px
           img
             vertical-align: middle
-        @media screen and (max-width: 520px)
+        @media screen and (max-width: 600px)
           display: none
           &.small
             display: inline-block
@@ -162,6 +182,8 @@ body, html
       color: #333333
       font-size: 16px
       text-align: left
+      @media screen and (max-width: 600px)
+        display: none
       img
         vertical-align: middle
         margin-right: 5px
@@ -170,6 +192,8 @@ body, html
   display: flex
   padding: 20px
   justify-content: center
+  @media screen and (max-width: 600px)
+    display: none
   .side
     &.flex
       width: 700px
@@ -188,7 +212,7 @@ body, html
           width: 100%
           margin: 10px auto
           padding: 20px
-          font-family: $cairo
+          font-family: $kufi
           color: #555555
           font-size: 13px
           text-align: center
@@ -270,10 +294,43 @@ body, html
   justify-content: center
   @media screen and (max-width: 1280px)
     flex-direction: column
+  .small-signup
+    display: none
+    border-radius: 10px
+    background: #f1f1f1
+    margin: 20px auto
+    width: calc(100% - 100px)
+    font-family: $kufi
+    text-align: center
+    box-shadow: 0px 0px 20px 10px #f1f1f1
+    h5
+      color: #555
+      font-size: 20px
+    p
+      display: block
+      margin: 0 auto
+      width: 90%
+      font-size: 15px
+      color: #888
+    form
+      margin: 20px auto
+      display: block
+      input
+        display: inline-block
+        border: 0
+        line-height: 50px
+        padding: 0px 10px
+        font-family: $kufi
+      button[type="submit"]
+        background: #7582D5
+        color: #FFF
+        font-size: 20px
+        cursor: pointer
+    @media screen and (max-width: 600px)
+      display: block
   .text
     flex-shrink: 0
     text-align: center
-    font-family: $cairo
     padding: 50px
     position: relative
     *
@@ -284,11 +341,13 @@ body, html
       font-size: 50px
       font-weight: 700
       background: #f9f9f9
+      font-family: $cairo
     p
-      font-size: 30px
+      font-size: 21px
       color: #555555
       max-width: 500px
       background: #f9f9f9
+      font-family: $kufi
     &::after
       content: ""
       position: absolute
@@ -309,6 +368,9 @@ body, html
     @media screen and (max-width: 670px)
       max-width: 600px
       width: calc(100% - 60px)
+    @media screen and (max-width: 600px)
+      width: calc(100% - 100px)
+      margin: 0 auto
     .btn
       position: absolute
       top: 50%
@@ -336,7 +398,6 @@ body, html
       border-radius: 10px
       height: 100%
       width: 100%
-      background: #f1f1f1
       position: relative
       direction: ltr
       .item
@@ -346,6 +407,7 @@ body, html
         background-size: contain !important
         background-position: center !important
         background-repeat: no-repeat !important
+        border-radius: 10px
   @media screen and (max-width: 1280px)
     .text
       p
@@ -376,7 +438,7 @@ body, html
     font-family: $cairo
     padding: 50px
     &.whatsapp
-      background: #F9F9F9
+      background: #f1f1f1
       position: relative
       padding-bottom: 270px
       &::after
@@ -389,6 +451,11 @@ body, html
         background: url("../svg/whatsapp_vector.svg")
         background-size: cover
         background-position: top
+      @media screen and (max-width: 600px)
+        background: #FFF
+        padding-bottom: 70px
+        &::after
+          display: none
       h5
         color: #333333
         font-size: 20px
@@ -439,6 +506,8 @@ body, html
       background-size: cover
       background-position: center
       position: relative
+      @media screen and (max-width: 600px)
+        display: none
       *
         position: relative
         z-index: 2
@@ -483,12 +552,16 @@ body, html
           color: #FFF
           font-size: 20px
           cursor: pointer
+          display: block
+          width: 100%
   @media screen and (max-width: 950px)
     flex-direction: column
     .side
       width: 100%
+  @media screen and (max-width: 600px)
+    box-shadow: 0 -5px 50px 0px rgba(0,0,0,0.1)
 .footer-container
-  background: #040404
+  background: #34373c
   position: relative
   font-family: $cairo
   &::before
@@ -561,6 +634,15 @@ body, html
         &:last-child
           border-bottom: 0
           padding-bottom: 0
+    @media screen and (max-width: 600px)
+      flex-direction: row
+      align-items: flex-start
+      .item
+        width: 50%
+        border-bottom: 0
+        margin: 0
+        iframe
+          max-width: 100%
   .copyrights
     display: flex
     background: #FFFFFF
@@ -583,15 +665,6 @@ body, html
       @media screen and (max-width: 580px)
         display: none
 
-.mini-logo
-  padding: 20px
-  text-align: center
-  background: #222
-  display: none
-  img
-    height: 70px
-  @media screen and (max-width: 600px)
-    display: block
 .header-container
   @media screen and (max-width: 600px)
     background: #f1f1f1
@@ -601,3 +674,67 @@ body, html
       display: none
     .content
       display: none
+    .top
+      box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.1)
+      margin-bottom: 20px
+      &::after
+        display: none
+      ul
+        width: 100%
+        display: flex
+        justify-content: space-between
+
+.testimonials-container
+  background: #F1F1F1
+  padding: 20px
+  margin: 0 auto
+  width: 90%
+  display: none
+  @media screen and (max-width: 600px)
+    display: block
+  .top
+    padding: 0 20px
+    display: flex
+    justify-content: space-between
+    a
+      display: inline-block
+      line-height: 35px
+      width: 35px
+      border-radius: 50%
+      text-align: center
+      background: #646464
+      cursor: pointer
+      &:hover
+        background: #34373C
+      img
+        vertical-align: -3px
+        width: 15px
+        height: 15px
+      &.left
+        img
+          transform-origin: center
+          transform: rotate(180deg)
+  .wrapper
+    .item
+      text-align: center
+      font-family: $kufi
+      .avatar
+        display: block
+        width: 50px
+        height: 50px
+        background-color: #34373C
+        margin: 0 auto
+        border-radius: 50%
+        margin-bottom: 20px
+        background-position: center !important
+        background-repeat: no-repeat !important
+        background-size: 50px !important
+      h5
+        color: #34373C
+        font-size: 15px
+        margin: 0
+      p
+        max-width: 300px
+        margin: 10px auto
+        font-size: 0.83em
+        color: #666

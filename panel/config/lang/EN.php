@@ -185,5 +185,10 @@
     "advertisements" => "Advertisements",
     "new_ad" => "New advertisement",
     "edit_ad" => "Edit advertisement",
+
+    "testimonials" => "Testimonials",
+    "client_name" => "Client name",
+
+    "avatar" => "Avatar",
   ];
 ?>
