@@ -21,10 +21,15 @@
   $DATABASE = "faroukdev_portfolio";
   */
 
+  /* $HOST = "localhost";
+  $USERNAME = "root";
+  $PASS = "";
+  $DATABASE = "school"; */
+
   $HOST = "localhost";
   $USERNAME = "root";
   $PASS = "";
-  $DATABASE = "school";
+  $DATABASE = "school_rowad";
 
   $Q = new mysqli("$HOST", "$USERNAME", "$PASS", "$DATABASE");
 

@@ -9,6 +9,11 @@
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.min.css">
 
+<!-- Fotorama from CDNJS, 19 KB -->
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+<!-- jQuery 1.8 or later, 33 KB -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
     <!-- Introduction container -->
     <div class="introduction-container">
       <div class="side">
@@ -37,6 +42,16 @@
 
     <!-- articles container -->
     <div class="article-container">
+      <?php if ($articles_q->num_rows > 0) { ?>
+      <div class="small-slider fotorama">
+        <?php while ( $slide = $articles_q->fetch_assoc() ) { ?>
+          <img src="<?php echo $slide['cover']; ?>" />
+        <?php } ?>
+      </div>
+      <?php } ?>
+
+      <?php mysqli_data_seek($articles_q, 0); ?>
+
       <?php if ($articles_q->num_rows > 0) { ?>
         <div class="slide-wrapper">
           <a class="btn right"> <img src="assets/svg/arrow-right.svg" /> </a>
