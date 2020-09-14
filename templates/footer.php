@@ -27,7 +27,7 @@
             <li> <a href="https://twitter.com/Rowad_alnjah" target="_blank"> <img src="assets/svg/twitter_white.svg" /></a> </li>
             <li> <a href="https://www.instagram.com/alrowad_100/" target="_blank"> <img src="assets/svg/instagram_white.svg" /></a> </li>
             <li> <a href="https://wa.me/966552510003" target="_blank"> <img src="assets/svg/whatsapp_white.svg" /></a> </li>
-            <!-- <li> <a href="#" target="_blank"> <img src="assets/svg/snapchat_white.svg" /> Rowd_alnjah </a> </li> -->
+            <li> <a href="#" class="open-snap"> <img src="assets/svg/snapchat_white.svg" /> </a> </li>
           </ul>
         </div>
 
@@ -35,14 +35,14 @@
           <h5>روابط مهمة</h5>
           <ul>
             <li>
-              <a href="#">
+              <a href="form.php?id=#signupWrapper">
                 <img src="assets/svg/yellow-chevron.svg" />
                 بوابة التسجيل
               </a>
             </li>
 
             <li>
-              <a href="#">
+              <a href="#" id="vision-section" class="scrollTo">
                 <img src="assets/svg/yellow-chevron.svg" />
                 رؤيتنا
               </a>
@@ -83,6 +83,6 @@
 
   <footer>
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/main.js?v=3"></script>
   </footer>
 </html>

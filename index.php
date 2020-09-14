@@ -19,10 +19,10 @@
       <div class="side">
         <div class="intro">
           <div class="social">
-            <a href="#"> <img src="assets/svg/snapchat.svg" /> </a>
-            <a href="#"> <img src="assets/svg/instagram.svg" /> </a>
-            <a href="#"> <img src="assets/svg/twitter.svg" /> </a>
-            <a href="#"> <img src="assets/svg/whatsapp.svg" /> </a>
+            <!-- <a href="#" target="_blank"> <img src="assets/svg/snapchat.svg" /> </a> -->
+            <a href="https://www.instagram.com/alrowad_100/" target="_blank"> <img src="assets/svg/instagram.svg" /> </a>
+            <a href="https://twitter.com/Rowad_alnjah" target="_blank"> <img src="assets/svg/twitter.svg" /> </a>
+            <a href="https://wa.me/966552510003" target="_blank"> <img src="assets/svg/whatsapp.svg" /> </a>
           </div>
           <p>
             <?php echo $general["about"]; ?>
@@ -42,15 +42,15 @@
 
     <!-- articles container -->
     <div class="article-container">
-      <?php if ($articles_q->num_rows > 0) { ?>
+      <?php /*if ($articles_q->num_rows > 0) { ?>
       <div class="small-slider fotorama">
         <?php while ( $slide = $articles_q->fetch_assoc() ) { ?>
           <img src="<?php echo $slide['cover']; ?>" />
         <?php } ?>
       </div>
-      <?php } ?>
+    <?php } */ ?>
 
-      <?php mysqli_data_seek($articles_q, 0); ?>
+      <?php //mysqli_data_seek($articles_q, 0); ?>
 
       <?php if ($articles_q->num_rows > 0) { ?>
         <div class="slide-wrapper">
@@ -73,7 +73,7 @@
         </form>
       </div>
 
-      <div class="text">
+      <div class="text vision-section">
         <h1>رؤيتنا</h1>
         <p>
         مساهمة في بناء مجتمع معرفي يعتز
@@ -119,14 +119,14 @@
           <button type="submit" name="">التسجيل</button>
         </form>
       </div>
-      <div class="side whatsapp">
+      <div class="side whatsapp contactContainer">
         <h5>إدا كانت لديكم أي إستفسارات لا تردد في التواصل معنا</h5>
         <ul>
           <li> <b>مكتب القبول والتسجيل:</b> ٠٥٩٨٥٠١٥١٥ </li>
           <li> <b>واتساب:</b> ٠٥٥٢٥١٠٠٠٣ </li>
         </ul>
 
-        <a href="#" class="btn-green"> واتساب <img src="assets/svg/whatsapp-white.svg" /> </a>
+        <a href="https://wa.me/966552510003" target="_blank" class="btn-green"> واتساب <img src="assets/svg/whatsapp-white.svg" /> </a>
       </div>
     </div>
     <!-- END Signup container -->

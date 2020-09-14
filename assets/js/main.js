@@ -5,28 +5,36 @@ $(document).ready(function(){
     $(".fixed-menu").toggleClass("active");
   });
 
-  $(".readArticle").click(function(e){
+  $(".scrollTo").click(function(e){
     e.preventDefault();
-    var bg = $(this).attr("data-bg");
-    var content = $(this).attr("data-content");
-    var title = $(this).attr("data-title");
+    var id = $(this).attr("id");
+    var elem = $("."+id);
 
-    Swal.fire({
-      title: title,
-      html: content,
-      width: 600,
-      padding: '3em',
-      imageUrl: bg,
-      imageWidth: 300,
-      imageHeight: 300,
-      confirmButtonText: 'إغلاق',
-      background: '#fff',
-      backdrop: `
-        rgba(0,0,123,0.4)
-        left top
-        no-repeat
-      `
-    })
+    if (elem.length > 0) {
+
+      var offset = $(elem).offset(); // Contains .top and .left
+
+      $('html, body').animate({
+          scrollTop: offset.top,
+          scrollLeft: offset.left
+      },function(){
+        if ( $(".fixed-menu").hasClass("active") )
+        {
+          $(".fixed-menu").removeClass("active");
+        }
+      });
+    }
   });
 
+  // Open snapchat box
+  $(".open-snap").click(function(e){
+    e.preventDefault();
+    $(".snap-box").addClass("active");
+  });
+
+  // Close snapchat box
+  $(".snap-box .close").click(function(e){
+    e.preventDefault();
+    $(".snap-box").removeClass("active");
+  });
 });

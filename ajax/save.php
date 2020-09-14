@@ -1,5 +1,7 @@
 <?php
+  require_once("../config/email_config.php");
   require_once("../config/config.php");
+  require_once("../config/send_email.php");
 
   //echo var_dump($_POST);
   //exit;
@@ -35,6 +37,29 @@
 
     if ( $insert )
     {
+      $gender = ($gender == 1) ? "بنات" : "بنين";
+      switch ($stage) {
+        case 0:
+          $stage_txt = "روضة";
+          break;
+
+          case 1:
+            $stage_txt = "ابتدائي";
+            break;
+
+            case 2:
+              $stage_txt = "متوسط";
+              break;
+
+              case 3:
+                $stage_txt = "ثانوي";
+                break;
+
+                default:
+                $stage_txt = "";
+                break;
+      }
+
       $last_id = $Q->insert_id;
       $path = "../assets/files/$last_id/";
       $residence = upload("residence",$path);
@@ -73,6 +98,11 @@
       $text = mysqli_error($Q);
     }
 
+
+    if ( $type == "success" )
+    {
+      send_email($gender, $firstname,$father,$grandfather,$family,$id_number,$stage_txt,$phone,$country,date("d/m/Y h:i",$time));
+    }
 
     $response = [
       "type" => $type,

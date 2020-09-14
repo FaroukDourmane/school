@@ -1,6 +1,6 @@
 <?php
 
-function send_email($name, $email, $recipient, $message, $time){
+function send_email($gender, $firstname,$father,$grandfather,$family,$id_number,$stage,$phone,$country,$time){
 
 GLOBAL $mail,$Q;
 
@@ -10,61 +10,171 @@ try {
     $mail->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
     $mail->SMTPAuth = true; // authentication enabled
     $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
-    $mail->Host = 'gotstyle.us';
+    $mail->Host = 'rowadschool.com';
     $mail->Port = 465; // 465 or 587
-    $mail->Username = 'info@@rowadschool.com';
+    $mail->Username = 'info@rowadschool.com';
     $mail->Password = '0xLZNF~rb($_';
 
     //Recipients
-    $mail->setFrom('info@@rowadschool.com');
-    $mail->addAddress($recipient);
+    $mail->setFrom('info@rowadschool.com');
+    $mail->addAddress("rowadalngah@gmail.com");
 
     //Content
     $mail->CharSet = 'UTF-8';
     $mail->isHTML(true); // Set email format to HTML
     $mail->Subject = 'مدارس رواد النجاح - تسجيل جديد';
-    $mail->Body    = '
+    $mail->Body = '
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-    <html style="background:#FFF;padding:20px;box-sizing:border-box;">
-
+    <html>
     <head>
-        <meta charset="UTF-8">
-        <meta content="width=device-width, initial-scale=1" name="viewport">
-        <meta name="x-apple-disable-message-reformatting">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta content="telephone=no" name="format-detection">
-        <title></title>
-        <!--[if (mso 16)]>
-        <style type="text/css">
-        a {text-decoration: none;}
-        </style>
-        <![endif]-->
-        <!--[if gte mso 9]><style>sup { font-size: 100% !important; }</style><![endif]-->
-        <!--[if !mso]><!-- -->
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
-        <!--<![endif]-->
+    <!-- If you delete this meta tag, the ground will open and swallow you. -->
+    <meta name="viewport" content="width=device-width" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>تسجيل جديد</title>
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/email.css" >
+
     </head>
 
-    <body style="background:#f9f9f9;">
-      <h1 style="display:block;line-height:50px;text-align:center;color:#555;"> يوجد تسجيل جديد </h1>
-      <p style="color:#f9f9f9;font-size:14px;text-align:center;padding:20px 0px;"> '.$time.' </p>
+    <body bgcolor="#FFFFFF" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
 
-      <div style="display:block;width:90%;margin:0px auto;border:1px #f1f1f1 solid;padding:10px;color:#333;">
-      '.$name.'
-      </div>
+    <!-- HEADER -->
+    <table class="head-wrap" bgcolor="#f1f1f1">
+    	<tr>
+    		<td class="header container">
+    			<!-- /content -->
+    			<div class="content">
+    				<table bgcolor="#f1f1f1" >
+    					<tr>
+    						<td style="text-align:center;"><img src="https://rowadschool.com/assets/img/logo-black.png" /></td>
+    					</tr>
+    				</table>
+    			</div><!-- /content -->
+    		</td>
+    		<td></td>
+    	</tr>
+    </table><!-- /HEADER -->
 
-      <div style="display:block;width:90%;margin:0px auto;border:1px #f1f1f1 solid;border-top:0;padding:10px;color:#333;">
-      '.$email.'
-      </div>
+    <!-- BODY -->
+    <table class="body-wrap" bgcolor="">
+    	<tr>
+    		<td></td>
+    		<td class="container" align="" bgcolor="#FFFFFF">
 
-      <div style="display:block;width:90%;margin:0px auto;border:1px #f1f1f1 solid;border-top:0;padding:10px;color:#333;">
-      '.$message.'
-      </div>
+    			<!-- content -->
+    			<div class="content" dir="rtl">
+    				<table>
+    					<tr>
+    						<td>
+    							<h1>مدارس رواد النجاح - تسجيل جديد</h1>
+    							<p class="lead">
+    								<small>تم التسجيل بتاريخ : </small>
+    								<b>'.$time.'</b>
+    							</p>
+    						</td>
+    					</tr>
+    				</table>
+    			</div><!-- /content -->
+
+    			<!-- content -->
+    			<div class="content" dir="rtl">
+
+    				<table bgcolor="">
+    					<tr>
+    						<td width="20%">النوع</td>
+    						<td>
+    							<h4>'.$gender.'</h4>
+    						</td>
+    					</tr>
+
+    					<tr>
+    						<td width="20%">الإسم</td>
+    						<td>
+    							<h4>'.$firstname.'</h4>
+    						</td>
+    					</tr>
+
+    					<tr>
+    						<td width="20%">الأب</td>
+    						<td>
+    							<h4>'.$father.'</h4>
+    						</td>
+    					</tr>
+
+    					<tr>
+    						<td width="20%">الجد</td>
+    						<td>
+    							<h4>'.$grandfather.'</h4>
+    						</td>
+    					</tr>
+
+    					<tr>
+    						<td width="20%">العائلة</td>
+    						<td>
+    							<h4>'.$family.'</h4>
+    						</td>
+    					</tr>
+    				</table>
+
+    				<hr />
+
+    				<table bgcolor="">
+    					<tr>
+    						<td width="20%">رقم السجل المدني</td>
+    						<td>
+    							<h4>'.$id_number.'</h4>
+    						</td>
+    					</tr>
+
+    					<tr>
+    						<td width="20%">المرحلة</td>
+    						<td>
+    							<h4>'.$stage.'</h4>
+    						</td>
+    					</tr>
+
+    					<tr>
+    						<td width="20%">الجنسية</td>
+    						<td>
+    							<h4>'.$country.'</h4>
+    						</td>
+    					</tr>
+
+    					<tr>
+    						<td width="20%">رقم الهاتف</td>
+    						<td>
+    							<h4>'.$phone.'</h4>
+    						</td>
+    					</tr>
+
+    				</table>
+    			</div><!-- /content -->
+
+    		</td>
+    		<td></td>
+    	</tr>
+    </table><!-- /BODY -->
+
+    <!-- HEADER -->
+    <table class="head-wrap" bgcolor="#f1f1f1">
+    	<tr>
+    		<td class="header container">
+    			<!-- /content -->
+    			<div class="content">
+    				<table bgcolor="#f1f1f1" >
+    					<tr>
+    						<td style="text-align:center;"> <small>لمشاهدة باقي التفاصيل يجب الدخول إلى لوحة التحكم</small> </td>
+    					</tr>
+    				</table>
+    			</div><!-- /content -->
+    		</td>
+    		<td></td>
+    	</tr>
+    </table><!-- /HEADER -->
 
     </body>
-
-    </html>
-    ';
+    </html>';
 
     $mail->send();
     $mail->ClearAddresses();
